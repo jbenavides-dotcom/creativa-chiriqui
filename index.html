@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creativa Coffee District — Propiedad en Venta | Chiriquí, Panamá</title>
+  <meta name="description" content="Propiedad agroindustrial cafetalera de 11.53 hectáreas en Chiriquí, Panamá. Planta de beneficio completa, laboratorio de catación, equipos incluidos. Creativa Coffee District.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #1A1A1A;
+      --secondary: #E84C6F;
+      --accent: #2BBCB3;
+      --gold: #D4A84B;
+      --bg: #FAF6F0;
+      --bg-dark: #0D0D0D;
+      --text: #1a1a1a;
+      --text-light: #FFFFFF;
+      --light: #F5F0EB;
+      --white: #FFFFFF;
+      --border: #333333;
+      --shadow: 0 4px 24px rgba(0,0,0,0.15);
+      --shadow-lg: 0 12px 48px rgba(0,0,0,0.25);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,13,13,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+    }
+    .navbar .container {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 72px;
+    }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700; color: var(--text-light);
+    }
+    .navbar-brand span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.02em; transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--secondary); }
+    .nav-cta {
+      background: var(--secondary); color: var(--white) !important;
+      padding: 10px 24px; border-radius: 6px; font-weight: 500;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* Mobile menu */
+    .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--text-light); margin: 5px 0; transition: 0.3s; }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative; height: 100vh; min-height: 600px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(13,13,13,0.4) 0%, rgba(26,26,26,0.8) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative; z-index: 2; text-align: center;
+      color: var(--white); max-width: 800px; padding: 0 24px;
+    }
+    .hero-tag {
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; margin-bottom: 16px; color: rgba(255,255,255,0.85);
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      font-size: 1.25rem; font-weight: 300; margin-bottom: 40px;
+      color: rgba(255,255,255,0.9);
+    }
+    .hero-cta {
+      display: inline-block; background: var(--secondary); color: var(--white);
+      padding: 16px 40px; border-radius: 6px; font-weight: 600;
+      font-size: 1rem; letter-spacing: 0.02em;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+    /* ========== STATS BAR ========== */
+    .stats {
+      background: #1A1A1A; border-bottom: 1px solid #2a2a2a;
+      padding: 48px 0;
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-size: 2.5rem; color: var(--gold); margin-bottom: 4px;
+    }
+    .stat-item p {
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.7);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* ========== SECTIONS COMMON ========== */
+    .section { padding: 96px 0; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-header h2 { font-size: 2.25rem; color: var(--primary); margin-bottom: 12px; }
+    .section-header p { font-size: 1.125rem; color: #666; max-width: 600px; margin: 0 auto; }
+    .section-divider {
+      width: 60px; height: 3px; background: var(--secondary);
+      margin: 16px auto 0; border-radius: 2px;
+    }
+
+    /* Dark section overrides */
+    .section-dark { background: var(--primary); }
+    .section-dark .section-header h2 { color: var(--text-light); }
+    .section-dark .section-header p { color: rgba(255,255,255,0.6); }
+
+    /* ========== GALLERY ========== */
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .gallery-item {
+      border-radius: 8px; overflow: hidden; cursor: pointer;
+      aspect-ratio: 4/3; position: relative;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover { transform: scale(1.02); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-item:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+      padding: 40px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 24px;
+      background: none; border: none; color: white; font-size: 2rem; cursor: pointer;
+    }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.15); border: none; color: white;
+      font-size: 2rem; width: 48px; height: 48px; border-radius: 50%;
+      cursor: pointer; transition: background 0.3s;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
+    .lightbox-prev { left: 24px; }
+    .lightbox-next { right: 24px; }
+
+    /* ========== SOBRE CCD ========== */
+    .sobre-ccd { background: var(--bg); }
+
+    /* ========== INFRASTRUCTURE ========== */
+    .infra-section { background: #1A1A1A; }
+    .infra-section .section-header h2 { color: var(--text-light); }
+    .infra-section .section-header p { color: rgba(255,255,255,0.6); }
+    .infra-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .infra-card {
+      background: #2C2C2C; border: 1px solid #333;
+      border-radius: 12px; padding: 32px; text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .infra-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .infra-icon {
+      width: 56px; height: 56px; background: #333;
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px; font-size: 1.5rem;
+    }
+    .infra-card h3 { font-size: 1.125rem; color: var(--white); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .infra-card p { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+
+    /* ========== EQUIPMENT ========== */
+    .equip-section { background: var(--bg); }
+    .equip-section .section-header h2 { color: var(--primary); }
+    .equip-section .section-header p { color: #666; }
+    .equip-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .equip-item {
+      background: var(--white); border-radius: 10px; padding: 24px;
+      text-align: center; font-weight: 500; color: var(--primary);
+      font-size: 0.95rem; border: 1px solid rgba(0,0,0,0.06);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .equip-item:hover { background: var(--light); transform: translateY(-2px); }
+    .equip-item .equip-icon { font-size: 1.75rem; margin-bottom: 8px; }
+
+    /* ========== MAP ========== */
+    .map-section { background: var(--light); }
+    .map-wrapper {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .map-embed {
+      border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);
+      aspect-ratio: 4/3;
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: none; }
+    .map-info h3 { font-size: 1.5rem; color: var(--primary); margin-bottom: 16px; }
+    .map-info p { color: #555; margin-bottom: 12px; }
+    .map-detail { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+    .map-detail-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 2px; }
+
+    /* ========== CONTACT ========== */
+    .contact-section { background: var(--primary); color: var(--white); }
+    .contact-section .section-header h2 { color: var(--white); }
+    .contact-section .section-header p { color: rgba(255,255,255,0.7); }
+    .contact-section .section-divider { background: var(--secondary); }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .contact-info h3 { font-size: 1.25rem; margin-bottom: 24px; color: var(--secondary); font-family: 'Inter', sans-serif; }
+    .contact-info p { color: rgba(255,255,255,0.8); margin-bottom: 16px; line-height: 1.8; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 14px 18px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px; color: var(--white); font-family: 'Inter', sans-serif;
+      font-size: 0.95rem; transition: border-color 0.3s;
+    }
+    .contact-form input::placeholder, .contact-form textarea::placeholder {
+      color: rgba(255,255,255,0.45);
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none; border-color: var(--secondary);
+    }
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+    .submit-btn {
+      background: var(--secondary); color: var(--white); border: none;
+      padding: 16px 40px; border-radius: 8px; font-size: 1rem;
+      font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .submit-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: #0D0D0D; color: rgba(255,255,255,0.5);
+      text-align: center; padding: 32px 0; font-size: 0.85rem;
+    }
+
+    /* ========== FADE-IN ANIMATION ========== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 968px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .infra-grid { grid-template-columns: repeat(2, 1fr); }
+      .equip-grid { grid-template-columns: repeat(2, 1fr); }
+      .map-wrapper { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.active {
+        display: flex; flex-direction: column;
+        position: absolute; top: 72px; left: 0; right: 0;
+        background: #0D0D0D; padding: 24px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:first-child { grid-column: auto; grid-row: auto; }
+      .hero h1 { font-size: 2.25rem; }
+    }
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .infra-grid { grid-template-columns: 1fr; }
+      .equip-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="navbar-brand">Creativa <span>Coffee District</span></a>
+      <ul class="nav-links">
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#infraestructura">Infraestructura</a></li>
+        <li><a href="#equipos">Equipos</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+      </ul>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-video" src="assets/img/hero.jpg" alt="Vista aérea panorámica de Creativa Coffee District, Chiriquí, Panamá" style="object-fit:cover;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Propiedad Agroindustrial en Venta</p>
+      <h1>Creativa Coffee District</h1>
+      <p class="hero-sub">11.53 hectáreas de excelencia cafetalera en Chiriquí, sobre la carretera David-Boquete</p>
+      <a href="#contacto" class="hero-cta">Solicitar Información</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-in">
+          <h3>11.53</h3>
+          <p>Hectáreas</p>
+        </div>
+        <div class="stat-item fade-in">
+          <h3>3,798</h3>
+          <p>m² Patios de Secado</p>
+        </div>
+        <div class="stat-item fade-in">
+          <h3>Finca</h3>
+          <p>No. 8398 Registrada</p>
+        </div>
+        <div class="stat-item fade-in">
+          <h3>Agua</h3>
+          <p>Concesión Vigente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="galeria" class="section" style="background:var(--bg);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>La Propiedad</h2>
+        <p>Una operación cafetalera completa lista para producir</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item fade-in" onclick="openLightbox(0)">
+          <img src="assets/img/patios-01.jpg" alt="Patios de secado y planta de beneficio" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(1)">
+          <img src="assets/img/aerial-01.jpg" alt="Vista aérea de la propiedad" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(2)">
+          <img src="assets/img/equipo-despulpadora.jpg" alt="Despulpadora Pinhalense" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(3)">
+          <img src="assets/img/planta-01.jpg" alt="Interior de la planta de procesamiento" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(4)">
+          <img src="assets/img/equipo-tanques.jpg" alt="Tanques de fermentación en acero inoxidable" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(5)">
+          <img src="assets/img/aerial-03.jpg" alt="Vista aérea del terreno" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(6)">
+          <img src="assets/img/carretera.jpg" alt="Acceso por carretera David-Boquete" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(7)">
+          <img src="assets/img/planta-02.jpg" alt="Infraestructura de la planta" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
+    <img id="lightbox-img" src="" alt="">
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
+  </div>
+
+  <!-- SOBRE CCD -->
+  <section class="section sobre-ccd">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Creativa Coffee District</h2>
+        <p>Donde el arte y el café de especialidad se encuentran para inspirar cambio</p>
+        <div class="section-divider"></div>
+      </div>
+      <div style="max-width:800px;margin:0 auto;text-align:center;">
+        <p class="fade-in" style="font-size:1.1rem;color:#555;line-height:1.8;margin-bottom:24px;">
+          Fundada en 2018, Creativa Coffee District es un espacio único en Chiriquí donde convergen la producción de café de especialidad,
+          el arte y la innovación agrícola. La propiedad cuenta con infraestructura completa para procesamiento húmedo y seco,
+          laboratorio de catación profesional y equipamiento de última generación.
+        </p>
+        <p class="fade-in" style="font-size:1.1rem;color:#555;line-height:1.8;">
+          Ubicada sobre la carretera David-Boquete, en el corazón de la principal región cafetalera de Panamá,
+          esta operación representa una oportunidad excepcional para inversionistas y productores que buscan
+          una plataforma cafetalera lista para operar a escala.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFRASTRUCTURE -->
+  <section id="infraestructura" class="section infra-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Infraestructura</h2>
+        <p>Instalaciones completas para operación cafetalera a escala</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="infra-grid">
+        <div class="infra-card fade-in">
+          <div class="infra-icon">🏭</div>
+          <h3>Planta de Beneficio</h3>
+          <p>Procesamiento húmedo y seco completo para café de alta calidad</p>
+        </div>
+        <div class="infra-card fade-in">
+          <div class="infra-icon">☀️</div>
+          <h3>Patios de Secado</h3>
+          <p>3,798 m² de área para secado natural al sol</p>
+        </div>
+        <div class="infra-card fade-in">
+          <div class="infra-icon">🌿</div>
+          <h3>Invernadero</h3>
+          <p>Espacio controlado para vivero y cultivos protegidos</p>
+        </div>
+        <div class="infra-card fade-in">
+          <div class="infra-icon">🏗️</div>
+          <h3>Silos de Almacenamiento</h3>
+          <p>Almacenamiento seguro para café en pergamino y oro</p>
+        </div>
+        <div class="infra-card fade-in">
+          <div class="infra-icon">❄️</div>
+          <h3>Cuartos Fríos</h3>
+          <p>Preservación óptima de café verde y muestras</p>
+        </div>
+        <div class="infra-card fade-in">
+          <div class="infra-icon">🧪</div>
+          <h3>Laboratorio de Catación</h3>
+          <p>Espacio profesional para evaluación sensorial SCA</p>
+        </div>
+        <div class="infra-card fade-in">
+          <div class="infra-icon">🏢</div>
+          <h3>Oficinas Administrativas</h3>
+          <p>Área de gestión y administración de la operación</p>
+        </div>
+        <div class="infra-card fade-in">
+          <div class="infra-icon">💧</div>
+          <h3>Concesión de Agua</h3>
+          <p>Derecho de uso de agua vigente para toda la operación</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPMENT -->
+  <section id="equipos" class="section equip-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Equipos Incluidos</h2>
+        <p>Maquinaria completa para toda la cadena de procesamiento</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="equip-grid">
+        <div class="equip-item fade-in">
+          <div class="equip-icon">⚙️</div>
+          Despulpadoras
+        </div>
+        <div class="equip-item fade-in">
+          <div class="equip-icon">🪣</div>
+          Tanques de Fermentación
+        </div>
+        <div class="equip-item fade-in">
+          <div class="equip-icon">🔄</div>
+          Guardiolas
+        </div>
+        <div class="equip-item fade-in">
+          <div class="equip-icon">⚙️</div>
+          Trilladoras
+        </div>
+        <div class="equip-item fade-in">
+          <div class="equip-icon">🔬</div>
+          Clasificadora Láser
+        </div>
+        <div class="equip-item fade-in">
+          <div class="equip-icon">🔥</div>
+          Tostadora
+        </div>
+        <div class="equip-item fade-in">
+          <div class="equip-icon">📦</div>
+          Empacadora
+        </div>
+        <div class="equip-item fade-in">
+          <div class="equip-icon">🚜</div>
+          Retroexcavadora
+        </div>
+        <div class="equip-item fade-in">
+          <div class="equip-icon">🛻</div>
+          Pick-up
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP / LOCATION -->
+  <section id="ubicacion" class="section map-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Ubicación Privilegiada</h2>
+        <p>En el corazón de la región cafetalera de Chiriquí</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="map-wrapper fade-in">
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62766.5!2d-82.44!3d8.48!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa61c0db4f0c4f1%3A0x0!2sCochea%2C+Dolega%2C+Chiriqu%C3%AD!5e0!3m2!1ses!2spa!4v1"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="map-info">
+          <h3>Cochea, Dolega, Chiriquí</h3>
+          <div class="map-detail">
+            <span class="map-detail-icon">📍</span>
+            <p>Frente a la carretera David-Boquete, la principal vía de acceso a la región cafetalera de Chiriquí</p>
+          </div>
+          <div class="map-detail">
+            <span class="map-detail-icon">🚗</span>
+            <p>Fácil acceso desde David (capital provincial) y Boquete (zona turística)</p>
+          </div>
+          <div class="map-detail">
+            <span class="map-detail-icon">✈️</span>
+            <p>Aeropuerto Enrique Malek (David) a corta distancia</p>
+          </div>
+          <div class="map-detail">
+            <span class="map-detail-icon">📐</span>
+            <p>11.53 hectáreas registradas — Finca No. 8398</p>
+          </div>
+          <div class="map-detail">
+            <span class="map-detail-icon">🏭</span>
+            <p>Operación agroindustrial completa — Creativa Coffee District (CCD), reconocida por su innovación en café de especialidad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contacto" class="section contact-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Solicitar Información</h2>
+        <p>¿Interesado en esta propiedad? Contáctenos para más detalles</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="contact-grid fade-in">
+        <div class="contact-info">
+          <h3>Detalles de contacto</h3>
+          <p>Complete el formulario y nos pondremos en contacto con usted a la brevedad para coordinar una visita o enviarle información adicional sobre la propiedad.</p>
+          <p>Esta es una oportunidad única de adquirir una operación cafetalera completa y lista para producir en una de las mejores regiones cafeteras del mundo.</p>
+          <p style="margin-top:24px;">
+            📞 +507 6402-3472<br>
+            <span style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Chiriquí, Panamá</span>
+          </p>
+        </div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+          </div>
+          <input type="tel" name="telefono" placeholder="Teléfono (con código de país)">
+          <textarea name="mensaje" placeholder="¿Qué le gustaría saber sobre la propiedad?" required></textarea>
+          <button type="submit" class="submit-btn">Enviar Consulta</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Creativa Coffee District — Chiriquí, Panamá. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ===== LIGHTBOX =====
+    const galleryImages = [
+      'assets/img/patios-01.jpg',
+      'assets/img/aerial-01.jpg',
+      'assets/img/equipo-despulpadora.jpg',
+      'assets/img/planta-01.jpg',
+      'assets/img/equipo-tanques.jpg',
+      'assets/img/aerial-03.jpg',
+      'assets/img/carretera.jpg',
+      'assets/img/planta-02.jpg'
+    ];
+    let currentImg = 0;
+
+    function openLightbox(index) {
+      currentImg = index;
+      document.getElementById('lightbox-img').src = galleryImages[index];
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function navLightbox(dir) {
+      currentImg = (currentImg + dir + galleryImages.length) % galleryImages.length;
+      document.getElementById('lightbox-img').src = galleryImages[currentImg];
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+      if (e.key === 'ArrowRight') navLightbox(1);
+    });
+
+    // ===== FORM HANDLER =====
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('Gracias por su interés. Nos pondremos en contacto pronto.');
+      e.target.reset();
+    }
+
+    // ===== NAVBAR SCROLL =====
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 2px 16px rgba(0,0,0,0.3)';
+      } else {
+        nav.style.boxShadow = 'none';
+      }
+    });
+
+    // ===== INTERSECTION OBSERVER — FADE-IN =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
