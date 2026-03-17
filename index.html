@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cafetalera Río Cochea — Propiedad en Venta | Chiriquí, Panamá</title>
-  <meta name="description" content="Propiedad agroindustrial cafetalera de 11.53 hectáreas en Chiriquí, Panamá. Planta de beneficio completa, laboratorio de catación, equipos incluidos. Cafetalera Río Cochea.">
+  <title>Complejo Agroindustrial Río Cochea — Propiedad en Venta | Chiriquí, Panamá</title>
+  <meta name="description" content="Complejo agroindustrial de 11.53 hectáreas en Chiriquí, Panamá. Planta industrial con concesión de agua vigente, cuartos fríos, laboratorio, equipos incluidos. Lista para operar. Complejo Agroindustrial Río Cochea.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -445,6 +445,53 @@
     }
 
     /* ========== RESPONSIVE ========== */
+    /* ========== DIFERENCIADORES ========== */
+    .diferenciadores-section { background: var(--bg); }
+    .diferenciadores-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    }
+    .diferenciador-card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px; padding: 32px; text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .diferenciador-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .diferenciador-card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .diferenciador-card h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .diferenciador-card p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+
+    /* ========== URGENCIA ========== */
+    .urgencia-section { background: var(--primary); }
+    .urgencia-section .section-header h2 { color: var(--text-light); }
+    .urgencia-section .section-header p { color: rgba(255,255,255,0.6); }
+    .urgencia-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .urgencia-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 32px; text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .urgencia-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.1); }
+    .urgencia-card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .urgencia-card h3 { font-size: 1.05rem; color: var(--white); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .urgencia-card p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    /* ========== PERFILES ========== */
+    .perfiles-section { background: var(--bg); }
+    .perfiles-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    }
+    .perfil-card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px; padding: 32px; text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .perfil-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .perfil-card-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .perfil-card h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .perfil-card p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+
     @media (max-width: 968px) {
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .infra-grid { grid-template-columns: repeat(2, 1fr); }
@@ -458,6 +505,9 @@
       .oportunidades-grid { grid-template-columns: repeat(2, 1fr); }
       .mercado-grid { grid-template-columns: 1fr; }
       .puerto-stats { flex-direction: row; }
+      .diferenciadores-grid { grid-template-columns: repeat(2, 1fr); }
+      .perfiles-grid { grid-template-columns: repeat(2, 1fr); }
+      .urgencia-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -478,11 +528,14 @@
       .puerto-stat:last-child { border-bottom: none; }
       .incentivos-grid { grid-template-columns: 1fr; }
       .oportunidades-grid { grid-template-columns: 1fr; }
+      .urgencia-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
       .infra-grid { grid-template-columns: 1fr; }
       .equip-grid { grid-template-columns: 1fr; gap: 16px; }
+      .diferenciadores-grid { grid-template-columns: 1fr; }
+      .perfiles-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -491,7 +544,7 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container">
-      <a href="#" class="navbar-brand">Cafetalera <span>Río Cochea</span></a>
+      <a href="#" class="navbar-brand">Complejo <span>Río Cochea</span></a>
       <ul class="nav-links">
         <li><a href="#galeria">Galería</a></li>
         <li><a href="#infraestructura">Infraestructura</a></li>
@@ -509,13 +562,13 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-video" src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1920/creativa-chiriqui/hero.jpg" alt="Vista aérea panorámica de Cafetalera Río Cochea, Chiriquí, Panamá" style="object-fit:cover;">
+    <img class="hero-video" src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1920/creativa-chiriqui/hero.jpg" alt="Vista aérea panorámica del Complejo Agroindustrial Río Cochea, Chiriquí, Panamá" style="object-fit:cover;">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-tag">Propiedad Agroindustrial en Venta</p>
-      <h1>Cafetalera Río Cochea</h1>
-      <p class="hero-sub">11.53 hectáreas de excelencia cafetalera en Chiriquí, sobre la carretera David-Boquete</p>
-      <a href="#contacto" class="hero-cta">Solicitar Información</a>
+      <h1>Complejo Agroindustrial Río Cochea</h1>
+      <p class="hero-sub">Planta industrial con concesión de agua · Lista para operar · Potencial ilimitado</p>
+      <a href="#contacto" class="hero-cta">Solicitar Información Privada</a>
     </div>
   </section>
 
@@ -538,6 +591,39 @@
         <div class="stat-item fade-in">
           <h3>Agua</h3>
           <p>Concesión Vigente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LO QUE NO SE PUEDE REPLICAR -->
+  <section class="section diferenciadores-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Lo Que No Se Puede Replicar</h2>
+        <p>Ventajas estructurales que definen el valor real de esta propiedad</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="diferenciadores-grid">
+        <div class="diferenciador-card fade-in">
+          <div class="diferenciador-card-icon">💧</div>
+          <h3>Concesión de Agua Vigente</h3>
+          <p>Autorización oficial del Ministerio de Ambiente para uso productivo. Obtener una nueva toma entre 18 y 24 meses — si la aprueban.</p>
+        </div>
+        <div class="diferenciador-card fade-in">
+          <div class="diferenciador-card-icon">🏭</div>
+          <h3>Uso Industrial Certificado</h3>
+          <p>Avalúo oficial confirma: el mayor y mejor uso de esta propiedad es INDUSTRIAL. No es una interpretación. Es un hecho documentado.</p>
+        </div>
+        <div class="diferenciador-card fade-in">
+          <div class="diferenciador-card-icon">📍</div>
+          <h3>Ubicación en Esquina sobre Vía Principal</h3>
+          <p>Frente directo a la carretera David-Boquete. Visibilidad total. Acceso inmediato para camiones, contenedores y logística.</p>
+        </div>
+        <div class="diferenciador-card fade-in">
+          <div class="diferenciador-card-icon">⚡</div>
+          <h3>Infraestructura Lista para Operar</h3>
+          <p>Planta de procesamiento completa. Cuartos fríos. Laboratorio. Patios de concreto. Bodegas. Oficinas. Todo instalado.</p>
         </div>
       </div>
     </div>
@@ -610,13 +696,13 @@
   <section class="section sobre-ccd">
     <div class="container">
       <div class="section-header fade-in">
-        <h2>Cafetalera Río Cochea</h2>
+        <h2>Complejo Agroindustrial Río Cochea</h2>
         <p>Excelencia cafetalera en el corazón de Chiriquí desde 1998</p>
         <div class="section-divider"></div>
       </div>
       <div style="max-width:800px;margin:0 auto;text-align:center;">
         <p class="fade-in" style="font-size:1.1rem;color:#555;line-height:1.8;margin-bottom:24px;">
-          Cafetalera Río Cochea es una operación agroindustrial única en Chiriquí, con décadas de tradición
+          Complejo Agroindustrial Río Cochea es una operación agroindustrial única en Chiriquí, con décadas de tradición
           en la producción de café de especialidad. La propiedad cuenta con infraestructura completa para procesamiento húmedo y seco,
           laboratorio de catación profesional y equipamiento de última generación.
         </p>
@@ -727,6 +813,15 @@
             <h3>Trilladoras</h3>
           </div>
         </div>
+        <!-- Densimétrica Pinhalense — SIN FOTO -->
+        <div class="equip-card fade-in">
+          <div class="equip-card-placeholder">
+            <div class="equip-card-placeholder-inner">⚖️</div>
+          </div>
+          <div class="equip-card-body">
+            <h3>Densimétrica Pinhalense</h3>
+          </div>
+        </div>
         <!-- Clasificadora Láser — FOTO REAL -->
         <div class="equip-card fade-in">
           <div class="equip-card-photo">
@@ -736,13 +831,13 @@
             <h3>Clasificadora Láser</h3>
           </div>
         </div>
-        <!-- Empacadora — SIN FOTO -->
+        <!-- Tostadora — SIN FOTO -->
         <div class="equip-card fade-in">
           <div class="equip-card-placeholder">
-            <div class="equip-card-placeholder-inner">📦</div>
+            <div class="equip-card-placeholder-inner">🔥</div>
           </div>
           <div class="equip-card-body">
-            <h3>Empacadora</h3>
+            <h3>Tostadora</h3>
           </div>
         </div>
         <!-- Retroexcavadora — SIN FOTO -->
@@ -802,7 +897,7 @@
           </div>
           <div class="map-detail">
             <span class="map-detail-icon">🏭</span>
-            <p>Operación agroindustrial completa — Cafetalera Río Cochea, reconocida por su tradición e innovación en café de especialidad</p>
+            <p>Operación agroindustrial completa — Complejo Agroindustrial Río Cochea, reconocida por su tradición e innovación en café de especialidad</p>
           </div>
         </div>
       </div>
@@ -847,6 +942,16 @@
           <div class="chiricui-card-icon">🌾</div>
           <h3>Granero de Panamá</h3>
           <p>Chiriquí aporta aproximadamente el 8% del PIB nacional. Principal provincia agrícola del país.</p>
+        </div>
+        <div class="chiricui-card fade-in">
+          <div class="chiricui-card-icon">📋</div>
+          <h3>Vocación Agroindustrial</h3>
+          <p>Zona designada como vocación agroindustrial según el Plan Regional de Desarrollo de Chiriquí.</p>
+        </div>
+        <div class="chiricui-card fade-in">
+          <div class="chiricui-card-icon">🏭</div>
+          <h3>Corredor David-Dolega</h3>
+          <p>Principal eje de agroindustria del país. Concentración de plantas de procesamiento y servicios logísticos.</p>
         </div>
       </div>
     </div>
@@ -955,40 +1060,35 @@
   <section class="section oportunidades-section">
     <div class="container">
       <div class="section-header fade-in">
-        <h2>Oportunidades de Desarrollo</h2>
-        <p>Usos potenciales con la infraestructura existente</p>
+        <h2>Más Allá del Café</h2>
+        <p>Esta propiedad fue diseñada para procesar café de especialidad — pero su verdadero valor está en lo que puede ser</p>
         <div class="section-divider"></div>
       </div>
       <div class="oportunidades-grid">
         <div class="oportunidad-card fade-in">
-          <div class="oportunidad-icon">☕</div>
-          <h3>Procesamiento de Café</h3>
-          <p>Infraestructura completa ya instalada: despulpadoras, guardiolas, trilladoras, clasificadora láser y laboratorio de catación.</p>
-        </div>
-        <div class="oportunidad-card fade-in">
-          <div class="oportunidad-icon">🍍</div>
-          <h3>Procesamiento de Frutas Tropicales</h3>
-          <p>Piña, maracuyá, naranja. Exportación directa vía Puerto Barú sin intermediarios hacia mercados internacionales.</p>
+          <div class="oportunidad-icon">🌾</div>
+          <h3>Agroindustria</h3>
+          <p>Café, frutas tropicales, cacao, especias. La infraestructura ya existe. Solo cambia la materia prima.</p>
         </div>
         <div class="oportunidad-card fade-in">
           <div class="oportunidad-icon">❄️</div>
-          <h3>Centro de Empaque y Frío</h3>
-          <p>Cold chain para el puerto. Cuartos fríos existentes como base para una operación logística de exportación.</p>
-        </div>
-        <div class="oportunidad-card fade-in">
-          <div class="oportunidad-icon">🌿</div>
-          <h3>Agroturismo / Ruta del Café</h3>
-          <p>Corredor Dolega-Boquete en crecimiento. Experiencias de catación, recorridos de finca y hospedaje boutique.</p>
-        </div>
-        <div class="oportunidad-card fade-in">
-          <div class="oportunidad-icon">🏡</div>
-          <h3>Comunidad para Expatriados</h3>
-          <p>Precios 40–60% menores que Boquete con clima similar. Demanda creciente de extranjeros buscando calidad de vida.</p>
+          <h3>Centro Logístico y de Frío</h3>
+          <p>Cuartos fríos operativos. Ubicación estratégica entre productores de tierras altas y puerto de exportación.</p>
         </div>
         <div class="oportunidad-card fade-in">
           <div class="oportunidad-icon">🏗️</div>
-          <h3>Zona Franca / Manufactura Liviana</h3>
-          <p>Incentivos fiscales agresivos vía David Free Zone. Ubicación estratégica junto a la futura terminal portuaria.</p>
+          <h3>Manufactura Liviana</h3>
+          <p>Zonificación permite uso industrial. Espacio, energía, agua y acceso vehicular — los cuatro pilares ya están resueltos.</p>
+        </div>
+        <div class="oportunidad-card fade-in">
+          <div class="oportunidad-icon">🏡</div>
+          <h3>Desarrollo Inmobiliario</h3>
+          <p>Plan de segregación listo. Tres lotes independientes con accesos diferenciados. Potencial residencial, comercial o mixto.</p>
+        </div>
+        <div class="oportunidad-card fade-in">
+          <div class="oportunidad-icon">🌿</div>
+          <h3>Agroturismo Premium</h3>
+          <p>En el corredor más visitado de Panamá. A minutos de Boquete. Con río, lago privado y paisaje de montaña.</p>
         </div>
       </div>
     </div>
@@ -1048,19 +1148,80 @@
     </div>
   </section>
 
+  <!-- POR QUÉ CHIRIQUÍ, POR QUÉ AHORA -->
+  <section class="section urgencia-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Por Qué Chiriquí, Por Qué Ahora</h2>
+        <p>Factores que convergen para crear una ventana de oportunidad única</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="urgencia-grid">
+        <div class="urgencia-card fade-in">
+          <div class="urgencia-card-icon">🚢</div>
+          <h3>Puerto Barú</h3>
+          <p>El nuevo puerto de aguas profundas transformará la logística de exportación del occidente de Panamá. Construcción iniciando.</p>
+        </div>
+        <div class="urgencia-card fade-in">
+          <div class="urgencia-card-icon">🛣️</div>
+          <h3>Corredor David-Boquete</h3>
+          <p>La ruta turística y agrícola más importante del país. Tráfico creciente. Demanda de servicios insatisfecha.</p>
+        </div>
+        <div class="urgencia-card fade-in">
+          <div class="urgencia-card-icon">🔑</div>
+          <h3>Escasez de Propiedades Industriales</h3>
+          <p>Encontrar terreno con agua, electricidad, acceso y permisos es casi imposible. Esta propiedad lo tiene todo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN ES ESTA PROPIEDAD -->
+  <section class="section perfiles-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>¿Para Quién es Esta Propiedad?</h2>
+        <p>Perfiles de inversionista que encontrarán valor aquí</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="perfiles-grid">
+        <div class="perfil-card fade-in">
+          <div class="perfil-card-icon">☕</div>
+          <h3>El Productor que Quiere Integrar</h3>
+          <p>Tiene fincas pero depende de terceros para procesar. Esta planta le da control total de su cadena.</p>
+        </div>
+        <div class="perfil-card fade-in">
+          <div class="perfil-card-icon">📦</div>
+          <h3>El Exportador que Busca Base</h3>
+          <p>Necesita instalaciones de acopio, procesamiento y despacho cerca de zonas productoras. Aquí las tiene.</p>
+        </div>
+        <div class="perfil-card fade-in">
+          <div class="perfil-card-icon">📈</div>
+          <h3>El Inversionista que Ve el Futuro</h3>
+          <p>Entiende que Puerto Barú, el boom de Boquete y la escasez de propiedades industriales crearán plusvalía inevitable.</p>
+        </div>
+        <div class="perfil-card fade-in">
+          <div class="perfil-card-icon">🏗️</div>
+          <h3>El Desarrollador Inmobiliario</h3>
+          <p>Ve tres lotes con potencial de subdivisión en una de las zonas de mayor crecimiento de Panamá.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contacto" class="section contact-section">
     <div class="container">
       <div class="section-header fade-in">
-        <h2>Solicitar Información</h2>
-        <p>¿Interesado en esta propiedad? Contáctenos para más detalles</p>
+        <h2>Esta Propiedad No Esperará</h2>
+        <p>Infraestructura industrial lista. Ubicación inmejorable. Agua asegurada. Permisos resueltos.</p>
         <div class="section-divider"></div>
       </div>
       <div class="contact-grid fade-in">
         <div class="contact-info">
-          <h3>Detalles de contacto</h3>
-          <p>Complete el formulario y nos pondremos en contacto con usted a la brevedad para coordinar una visita o enviarle información adicional sobre la propiedad.</p>
-          <p>Esta es una oportunidad única de adquirir una operación cafetalera completa y lista para producir en una de las mejores regiones cafeteras del mundo.</p>
+          <h3>El próximo dueño no tendrá que construir nada.</h3>
+          <p>Solo decidir qué hacer con todo esto.</p>
+          <p style="font-size:0.9rem;color:rgba(255,255,255,0.5);margin-top:16px;font-style:italic;">Incluye: ficha técnica completa, planos de segregación y términos de negociación.</p>
           <p style="margin-top:24px;">
             📞 +507 6402-3472<br>
             <span style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Chiriquí, Panamá</span>
@@ -1073,7 +1234,7 @@
           </div>
           <input type="tel" name="telefono" placeholder="Teléfono (con código de país)">
           <textarea name="mensaje" placeholder="¿Qué le gustaría saber sobre la propiedad?" required></textarea>
-          <button type="submit" class="submit-btn" id="submitBtn">Enviar Consulta</button>
+          <button type="submit" class="submit-btn" id="submitBtn">Solicitar Información Privada</button>
           <div class="form-message" id="formMessage"></div>
         </form>
       </div>
@@ -1083,7 +1244,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Cafetalera Río Cochea — Chiriquí, Panamá. Todos los derechos reservados.</p>
+      <p>&copy; 2026 Complejo Agroindustrial Río Cochea — Chiriquí, Panamá. Todos los derechos reservados.</p>
     </div>
   </footer>
 
@@ -1178,7 +1339,7 @@
         console.error('Error al enviar formulario:', err);
       } finally {
         btn.disabled = false;
-        btn.textContent = 'Enviar Consulta';
+        btn.textContent = 'Solicitar Información Privada';
       }
     }
 
