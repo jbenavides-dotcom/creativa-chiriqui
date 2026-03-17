@@ -65,7 +65,7 @@
       font-size: 1.25rem; font-weight: 700; color: var(--text-light);
     }
     .navbar-brand span { color: rgba(255,255,255,0.7); }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a {
       font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.85);
       letter-spacing: 0.02em; transition: color 0.3s;
@@ -217,16 +217,43 @@
     .equip-section .section-header h2 { color: var(--primary); }
     .equip-section .section-header p { color: #666; }
     .equip-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
     }
-    .equip-item {
-      background: var(--white); border-radius: 10px; padding: 24px;
-      text-align: center; font-weight: 500; color: var(--primary);
-      font-size: 0.95rem; border: 1px solid rgba(0,0,0,0.06);
-      transition: background 0.3s, transform 0.3s;
+    .equip-card {
+      background: var(--white); border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.07);
+      box-shadow: 0 2px 12px rgba(27,58,45,0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .equip-item:hover { background: var(--light); transform: translateY(-2px); }
-    .equip-item .equip-icon { font-size: 1.75rem; margin-bottom: 8px; }
+    .equip-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(27,58,45,0.15); }
+    .equip-card-photo {
+      aspect-ratio: 16/9; overflow: hidden;
+    }
+    .equip-card-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .equip-card:hover .equip-card-photo img { transform: scale(1.05); }
+    .equip-card-placeholder {
+      aspect-ratio: 16/9;
+      background: #1B3A2D;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .equip-card-placeholder-inner {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.75rem;
+    }
+    .equip-card-body {
+      padding: 18px 20px; background: var(--primary);
+      text-align: center;
+    }
+    .equip-card-body h3 {
+      font-size: 1rem; color: var(--white); font-family: 'Inter', sans-serif;
+      font-weight: 600; margin: 0;
+    }
 
     /* ========== MAP ========== */
     .map-section { background: var(--light); }
@@ -242,6 +269,114 @@
     .map-info p { color: #555; margin-bottom: 12px; }
     .map-detail { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
     .map-detail-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 2px; }
+
+    /* ========== POR QUÉ CHIRIQUÍ ========== */
+    .chiricui-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .chiricui-card {
+      background: var(--white); border-radius: 12px; padding: 32px;
+      border: 1px solid rgba(27,58,45,0.1); transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .chiricui-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .chiricui-card-icon { font-size: 2rem; margin-bottom: 16px; }
+    .chiricui-card h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .chiricui-card p { font-size: 0.9rem; color: #555; line-height: 1.7; }
+
+    /* ========== PUERTO BARÚ ========== */
+    .puerto-section { background: var(--primary); }
+    .puerto-section .section-header h2 { color: var(--white); }
+    .puerto-section .section-header p { color: rgba(255,255,255,0.7); }
+    .puerto-section .section-divider { background: rgba(255,255,255,0.4); }
+    .puerto-stats {
+      display: flex; justify-content: center; gap: 0;
+      margin-bottom: 48px; flex-wrap: wrap;
+      border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; overflow: hidden;
+    }
+    .puerto-stat {
+      flex: 1; min-width: 160px; text-align: center; padding: 28px 24px;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .puerto-stat:last-child { border-right: none; }
+    .puerto-stat h3 { font-size: 2rem; color: var(--white); margin-bottom: 4px; }
+    .puerto-stat p { font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.05em; }
+    .puerto-desc {
+      max-width: 760px; margin: 0 auto 48px; text-align: center;
+      color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.8;
+    }
+    .puerto-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-bottom: 32px;
+    }
+    .puerto-card {
+      background: #234D3A; border: 1px solid #2D5A3D;
+      border-radius: 12px; padding: 28px; text-align: center;
+      transition: transform 0.3s;
+    }
+    .puerto-card:hover { transform: translateY(-4px); }
+    .puerto-card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .puerto-card h3 { font-size: 1rem; color: var(--white); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .puerto-card p { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+    .puerto-nota {
+      text-align: center; color: rgba(255,255,255,0.5);
+      font-size: 0.85rem; font-style: italic;
+    }
+
+    /* ========== INCENTIVOS ========== */
+    .incentivos-section { background: var(--bg); }
+    .incentivos-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .incentivo-card {
+      background: var(--white); border-radius: 12px; padding: 28px;
+      border: 1px solid rgba(27,58,45,0.1); transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .incentivo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .incentivo-icon { font-size: 2rem; margin-bottom: 12px; }
+    .incentivo-card h3 { font-size: 1rem; color: var(--primary); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .incentivo-card p { font-size: 0.88rem; color: #555; line-height: 1.7; }
+
+    /* ========== OPORTUNIDADES ========== */
+    .oportunidades-section { background: var(--primary); }
+    .oportunidades-section .section-header h2 { color: var(--white); }
+    .oportunidades-section .section-header p { color: rgba(255,255,255,0.6); }
+    .oportunidades-section .section-divider { background: rgba(255,255,255,0.4); }
+    .oportunidades-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .oportunidad-card {
+      background: #234D3A; border: 1px solid #2D5A3D;
+      border-radius: 12px; padding: 28px; text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .oportunidad-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .oportunidad-icon { font-size: 2.25rem; margin-bottom: 14px; }
+    .oportunidad-card h3 { font-size: 1rem; color: var(--white); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .oportunidad-card p { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    /* ========== MERCADO INMOBILIARIO ========== */
+    .mercado-section { background: var(--bg); }
+    .mercado-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+    }
+    .precios-table {
+      width: 100%; border-collapse: collapse;
+      background: var(--white); border-radius: 12px; overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .precios-table thead { background: var(--primary); color: var(--white); }
+    .precios-table th { padding: 14px 20px; text-align: left; font-size: 0.85rem; font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; }
+    .precios-table td { padding: 14px 20px; font-size: 0.9rem; border-bottom: 1px solid rgba(0,0,0,0.06); color: var(--text); }
+    .precios-table tr:last-child td { border-bottom: none; }
+    .precios-table tr:nth-child(even) td { background: var(--bg); }
+    .precios-table td:last-child { font-weight: 500; color: var(--primary); }
+    .mercado-info h3 { font-size: 1.35rem; color: var(--primary); margin-bottom: 16px; }
+    .mercado-info p { color: #555; line-height: 1.8; margin-bottom: 16px; font-size: 0.95rem; }
+    .mercado-tag {
+      display: inline-block; background: var(--light); color: var(--primary);
+      padding: 6px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 600;
+      margin-bottom: 8px; margin-right: 6px; border: 1px solid rgba(27,58,45,0.15);
+    }
 
     /* ========== CONTACT ========== */
     .contact-section { background: var(--primary); color: var(--white); }
@@ -274,7 +409,23 @@
       font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif;
       transition: transform 0.3s, opacity 0.3s;
     }
-    .submit-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+    .submit-btn:hover:not(:disabled) { transform: translateY(-2px); opacity: 0.9; }
+    .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+    .form-message {
+      padding: 12px 18px; border-radius: 8px; font-size: 0.9rem;
+      font-weight: 500; display: none;
+    }
+    .form-message.success {
+      display: block; background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.3); color: var(--white);
+    }
+    .form-message.error {
+      display: block; background: rgba(220,50,50,0.2);
+      border: 1px solid rgba(220,50,50,0.4); color: #ffcccc;
+    }
+    .response-time {
+      color: rgba(255,255,255,0.55); font-size: 0.85rem; font-style: italic;
+    }
 
     /* ========== FOOTER ========== */
     .footer {
@@ -297,10 +448,16 @@
     @media (max-width: 968px) {
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .infra-grid { grid-template-columns: repeat(2, 1fr); }
-      .equip-grid { grid-template-columns: repeat(2, 1fr); }
+      .equip-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .map-wrapper { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
+      .chiricui-grid { grid-template-columns: repeat(2, 1fr); }
+      .puerto-cards { grid-template-columns: repeat(2, 1fr); }
+      .incentivos-grid { grid-template-columns: repeat(2, 1fr); }
+      .oportunidades-grid { grid-template-columns: repeat(2, 1fr); }
+      .mercado-grid { grid-template-columns: 1fr; }
+      .puerto-stats { flex-direction: row; }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -314,11 +471,18 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item:first-child { grid-column: auto; grid-row: auto; }
       .hero h1 { font-size: 2.25rem; }
+      .chiricui-grid { grid-template-columns: 1fr; }
+      .puerto-cards { grid-template-columns: 1fr; }
+      .puerto-stats { flex-direction: column; }
+      .puerto-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .puerto-stat:last-child { border-bottom: none; }
+      .incentivos-grid { grid-template-columns: 1fr; }
+      .oportunidades-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
       .infra-grid { grid-template-columns: 1fr; }
-      .equip-grid { grid-template-columns: 1fr 1fr; }
+      .equip-grid { grid-template-columns: 1fr; gap: 16px; }
     }
   </style>
 </head>
@@ -333,6 +497,8 @@
         <li><a href="#infraestructura">Infraestructura</a></li>
         <li><a href="#equipos">Equipos</a></li>
         <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#puerto-baru">Puerto Barú</a></li>
+        <li><a href="#incentivos">Inversión</a></li>
         <li><a href="#contacto" class="nav-cta">Contactar</a></li>
       </ul>
       <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
@@ -343,7 +509,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-video" src="assets/img/hero.jpg" alt="Vista aérea panorámica de Cafetalera Río Cochea, Chiriquí, Panamá" style="object-fit:cover;">
+    <img class="hero-video" src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1920/creativa-chiriqui/hero.jpg" alt="Vista aérea panorámica de Cafetalera Río Cochea, Chiriquí, Panamá" style="object-fit:cover;">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-tag">Propiedad Agroindustrial en Venta</p>
@@ -387,28 +553,46 @@
       </div>
       <div class="gallery-grid">
         <div class="gallery-item fade-in" onclick="openLightbox(0)">
-          <img src="assets/img/patios-01.jpg" alt="Patios de secado y planta de beneficio" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/patios-01.jpg" alt="Patios de secado y planta de beneficio" loading="lazy">
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(1)">
-          <img src="assets/img/aerial-01.jpg" alt="Vista aérea de la propiedad" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-01.jpg" alt="Vista aérea de la propiedad" loading="lazy">
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(2)">
-          <img src="assets/img/equipo-despulpadora.jpg" alt="Despulpadora Pinhalense" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-despulpadora.jpg" alt="Despulpadora Pinhalense" loading="lazy">
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(3)">
-          <img src="assets/img/planta-01.jpg" alt="Interior de la planta de procesamiento" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-01.jpg" alt="Interior de la planta de procesamiento" loading="lazy">
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(4)">
-          <img src="assets/img/equipo-tanques.jpg" alt="Tanques de fermentación en acero inoxidable" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-tanques.jpg" alt="Tanques de fermentación en acero inoxidable" loading="lazy">
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(5)">
-          <img src="assets/img/aerial-03.jpg" alt="Vista aérea del terreno" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-03.jpg" alt="Vista aérea del terreno" loading="lazy">
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(6)">
-          <img src="assets/img/carretera.jpg" alt="Acceso por carretera David-Boquete" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/carretera.jpg" alt="Acceso por carretera David-Boquete" loading="lazy">
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(7)">
-          <img src="assets/img/planta-02.jpg" alt="Infraestructura de la planta" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-02.jpg" alt="Infraestructura de la planta" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(8)">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-02.jpg" alt="Patios de secado vistos desde el aire" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(9)">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-04.jpg" alt="Río y linderos de la propiedad" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(10)">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-05.jpg" alt="Propiedad junto a carretera" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(11)">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-06.jpg" alt="Vista panorámica con carretera" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(12)">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-03.jpg" alt="Detalle interior de infraestructura" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in" onclick="openLightbox(13)">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-densimetrica.jpg" alt="Equipo de procesamiento Pinhalense" loading="lazy">
         </div>
       </div>
     </div>
@@ -507,41 +691,77 @@
         <div class="section-divider"></div>
       </div>
       <div class="equip-grid">
-        <div class="equip-item fade-in">
-          <div class="equip-icon">⚙️</div>
-          Despulpadoras
+        <!-- Despulpadoras — FOTO REAL -->
+        <div class="equip-card fade-in">
+          <div class="equip-card-photo">
+            <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-despulpadora.jpg" alt="Despulpadoras Pinhalense" loading="lazy">
+          </div>
+          <div class="equip-card-body">
+            <h3>Despulpadoras</h3>
+          </div>
         </div>
-        <div class="equip-item fade-in">
-          <div class="equip-icon">🪣</div>
-          Tanques de Fermentación
+        <!-- Tanques de Fermentación — FOTO REAL -->
+        <div class="equip-card fade-in">
+          <div class="equip-card-photo">
+            <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-tanques.jpg" alt="Tanques de fermentación en acero inoxidable" loading="lazy">
+          </div>
+          <div class="equip-card-body">
+            <h3>Tanques de Fermentación</h3>
+          </div>
         </div>
-        <div class="equip-item fade-in">
-          <div class="equip-icon">🔄</div>
-          Guardiolas
+        <!-- Guardiolas — SIN FOTO -->
+        <div class="equip-card fade-in">
+          <div class="equip-card-placeholder">
+            <div class="equip-card-placeholder-inner">🔄</div>
+          </div>
+          <div class="equip-card-body">
+            <h3>Guardiolas (Secadoras Mecánicas)</h3>
+          </div>
         </div>
-        <div class="equip-item fade-in">
-          <div class="equip-icon">⚙️</div>
-          Trilladoras
+        <!-- Trilladoras — USA equipo-densimetrica.jpg -->
+        <div class="equip-card fade-in">
+          <div class="equip-card-photo">
+            <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-densimetrica.jpg" alt="Trilladora Pinhalense" loading="lazy">
+          </div>
+          <div class="equip-card-body">
+            <h3>Trilladoras</h3>
+          </div>
         </div>
-        <div class="equip-item fade-in">
-          <div class="equip-icon">🔬</div>
-          Clasificadora Láser
+        <!-- Clasificadora Láser — FOTO REAL -->
+        <div class="equip-card fade-in">
+          <div class="equip-card-photo">
+            <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-clasificadora.jpg" alt="Clasificadora láser de café" loading="lazy">
+          </div>
+          <div class="equip-card-body">
+            <h3>Clasificadora Láser</h3>
+          </div>
         </div>
-        <div class="equip-item fade-in">
-          <div class="equip-icon">🔥</div>
-          Tostadora
+        <!-- Empacadora — SIN FOTO -->
+        <div class="equip-card fade-in">
+          <div class="equip-card-placeholder">
+            <div class="equip-card-placeholder-inner">📦</div>
+          </div>
+          <div class="equip-card-body">
+            <h3>Empacadora</h3>
+          </div>
         </div>
-        <div class="equip-item fade-in">
-          <div class="equip-icon">📦</div>
-          Empacadora
+        <!-- Retroexcavadora — SIN FOTO -->
+        <div class="equip-card fade-in">
+          <div class="equip-card-placeholder">
+            <div class="equip-card-placeholder-inner">🚜</div>
+          </div>
+          <div class="equip-card-body">
+            <h3>Retroexcavadora</h3>
+          </div>
         </div>
-        <div class="equip-item fade-in">
-          <div class="equip-icon">🚜</div>
-          Retroexcavadora
-        </div>
-        <div class="equip-item fade-in">
-          <div class="equip-icon">🛻</div>
-          Pick-up
+        <!-- Pick-up — SIN FOTO -->
+        <div class="equip-card fade-in">
+          <div class="equip-card-placeholder">
+            <div class="equip-card-placeholder-inner">🛻</div>
+          </div>
+          <div class="equip-card-body">
+            <h3>Pick-up</h3>
+          </div>
         </div>
       </div>
     </div>
@@ -589,6 +809,245 @@
     </div>
   </section>
 
+  <!-- ¿POR QUÉ CHIRIQUÍ? -->
+  <section class="section" style="background:var(--bg);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>¿Por Qué Chiriquí?</h2>
+        <p>La provincia con mayor potencial agroindustrial de Panamá</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="chiricui-grid">
+        <div class="chiricui-card fade-in">
+          <div class="chiricui-card-icon">🗺️</div>
+          <h3>Ubicación Estratégica</h3>
+          <p>Entre David (capital comercial, 15 km) y Boquete (turismo premium, 25 km). Sobre la carretera David-Boquete.</p>
+        </div>
+        <div class="chiricui-card fade-in">
+          <div class="chiricui-card-icon">🌤️</div>
+          <h3>Clima Ideal</h3>
+          <p>24.8°C promedio, altitud 441 msnm. Punto medio perfecto entre el calor de David y el frío de Boquete.</p>
+        </div>
+        <div class="chiricui-card fade-in">
+          <div class="chiricui-card-icon">🌋</div>
+          <h3>Suelo Volcánico Fértil</h3>
+          <p>Influencia directa del Volcán Barú. Producción diversificada y cosechas durante todo el año.</p>
+        </div>
+        <div class="chiricui-card fade-in">
+          <div class="chiricui-card-icon">💧</div>
+          <h3>Recursos Hídricos</h3>
+          <p>Ubicada entre los ríos Cochea y David. La propiedad cuenta con concesión de agua vigente.</p>
+        </div>
+        <div class="chiricui-card fade-in">
+          <div class="chiricui-card-icon">🛣️</div>
+          <h3>Conectividad</h3>
+          <p>Aeropuerto Enrique Malek (David), Carretera Interamericana, e inversión vial MOP de $276 millones.</p>
+        </div>
+        <div class="chiricui-card fade-in">
+          <div class="chiricui-card-icon">🌾</div>
+          <h3>Granero de Panamá</h3>
+          <p>Chiriquí aporta aproximadamente el 8% del PIB nacional. Principal provincia agrícola del país.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUERTO BARÚ -->
+  <section id="puerto-baru" class="section puerto-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Puerto Barú — El Catalizador Regional</h2>
+        <p>Inversión de $250 millones USD que transformará Chiriquí</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="puerto-stats fade-in">
+        <div class="puerto-stat">
+          <h3>$250M</h3>
+          <p>Inversión total USD</p>
+        </div>
+        <div class="puerto-stat">
+          <h3>124 ha</h3>
+          <p>Hectáreas del puerto</p>
+        </div>
+        <div class="puerto-stat">
+          <h3>3</h3>
+          <p>Muelles multipropósito</p>
+        </div>
+        <div class="puerto-stat">
+          <h3>2,700+</h3>
+          <p>Empleos directos</p>
+        </div>
+      </div>
+
+      <p class="puerto-desc fade-in">
+        Terminal marítima multipropósito y primer puerto verde de Panamá. 100% capital privado americano.
+        Incluye la David Free Zone — zona franca vinculada directamente al puerto para exportación e industria liviana.
+        Fase 1 de construcción inicia en 2026.
+      </p>
+
+      <div class="puerto-cards">
+        <div class="puerto-card fade-in">
+          <div class="puerto-card-icon">🚢</div>
+          <h3>Exportación Directa</h3>
+          <p>Sin intermediarios ni traslado a Ciudad de Panamá. Café, frutas y productos agroindustriales salen directo desde Chiriquí al mundo.</p>
+        </div>
+        <div class="puerto-card fade-in">
+          <div class="puerto-card-icon">📈</div>
+          <h3>Apreciación de Terrenos</h3>
+          <p>El corredor David-Dolega es la zona de mayor crecimiento. La infraestructura portuaria impulsa directamente el valor de propiedades en el área.</p>
+        </div>
+        <div class="puerto-card fade-in">
+          <div class="puerto-card-icon">⛵</div>
+          <h3>Turismo de Cruceros</h3>
+          <p>Nuevo mercado turístico para toda la provincia. Abre oportunidades en agroturismo, hospedaje y servicios en la ruta Boquete-Chiriquí.</p>
+        </div>
+      </div>
+
+      <p class="puerto-nota fade-in">Fase 1 construcción: 2026</p>
+    </div>
+  </section>
+
+  <!-- INCENTIVOS PARA INVERSIONISTAS -->
+  <section id="incentivos" class="section incentivos-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Incentivos Para Inversionistas</h2>
+        <p>Panamá ofrece uno de los marcos fiscales más favorables de América</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="incentivos-grid">
+        <div class="incentivo-card fade-in">
+          <div class="incentivo-icon">🏠</div>
+          <h3>Exención de Impuesto de Inmueble</h3>
+          <p>Hasta 20 años de exención para nuevas construcciones y desarrollos sobre la propiedad.</p>
+        </div>
+        <div class="incentivo-card fade-in">
+          <div class="incentivo-icon">🏭</div>
+          <h3>Zonas Francas</h3>
+          <p>Exención total de impuestos de importación. David Free Zone vinculada directamente al Puerto Barú.</p>
+        </div>
+        <div class="incentivo-card fade-in">
+          <div class="incentivo-icon">📜</div>
+          <h3>Sin Impuesto de Herencia</h3>
+          <p>Panamá no cobra impuesto de herencia ni donaciones. El patrimonio se transfiere íntegro.</p>
+        </div>
+        <div class="incentivo-card fade-in">
+          <div class="incentivo-icon">🛂</div>
+          <h3>Residencia por Inversión</h3>
+          <p>$300,000 USD otorgan residencia permanente bajo el Decreto 722 de 2020.</p>
+        </div>
+        <div class="incentivo-card fade-in">
+          <div class="incentivo-icon">🌍</div>
+          <h3>Extranjeros Pueden Comprar</h3>
+          <p>Mismos derechos que ciudadanos panameños. No se requiere visa ni residencia previa para adquirir propiedad.</p>
+        </div>
+        <div class="incentivo-card fade-in">
+          <div class="incentivo-icon">✅</div>
+          <h3>Impuesto de Transferencia</h3>
+          <p>Solo 2% del valor de la propiedad. Proceso simple, seguro y completamente transparente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPORTUNIDADES DE DESARROLLO -->
+  <section class="section oportunidades-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Oportunidades de Desarrollo</h2>
+        <p>Usos potenciales con la infraestructura existente</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="oportunidades-grid">
+        <div class="oportunidad-card fade-in">
+          <div class="oportunidad-icon">☕</div>
+          <h3>Procesamiento de Café</h3>
+          <p>Infraestructura completa ya instalada: despulpadoras, guardiolas, trilladoras, clasificadora láser y laboratorio de catación.</p>
+        </div>
+        <div class="oportunidad-card fade-in">
+          <div class="oportunidad-icon">🍍</div>
+          <h3>Procesamiento de Frutas Tropicales</h3>
+          <p>Piña, maracuyá, naranja. Exportación directa vía Puerto Barú sin intermediarios hacia mercados internacionales.</p>
+        </div>
+        <div class="oportunidad-card fade-in">
+          <div class="oportunidad-icon">❄️</div>
+          <h3>Centro de Empaque y Frío</h3>
+          <p>Cold chain para el puerto. Cuartos fríos existentes como base para una operación logística de exportación.</p>
+        </div>
+        <div class="oportunidad-card fade-in">
+          <div class="oportunidad-icon">🌿</div>
+          <h3>Agroturismo / Ruta del Café</h3>
+          <p>Corredor Dolega-Boquete en crecimiento. Experiencias de catación, recorridos de finca y hospedaje boutique.</p>
+        </div>
+        <div class="oportunidad-card fade-in">
+          <div class="oportunidad-icon">🏡</div>
+          <h3>Comunidad para Expatriados</h3>
+          <p>Precios 40–60% menores que Boquete con clima similar. Demanda creciente de extranjeros buscando calidad de vida.</p>
+        </div>
+        <div class="oportunidad-card fade-in">
+          <div class="oportunidad-icon">🏗️</div>
+          <h3>Zona Franca / Manufactura Liviana</h3>
+          <p>Incentivos fiscales agresivos vía David Free Zone. Ubicación estratégica junto a la futura terminal portuaria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MERCADO INMOBILIARIO -->
+  <section class="section mercado-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Mercado Inmobiliario</h2>
+        <p>Contexto de precios y tendencias en Chiriquí</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="mercado-grid fade-in">
+        <div>
+          <table class="precios-table">
+            <thead>
+              <tr>
+                <th>Tipo de Propiedad</th>
+                <th>Precio / Ha</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tierra agrícola básica</td>
+                <td>$12,000 – $16,000</td>
+              </tr>
+              <tr>
+                <td>Finca con infraestructura</td>
+                <td>$25,000 – $35,000</td>
+              </tr>
+              <tr>
+                <td>Terreno residencial (Los Algarrobos)</td>
+                <td>$350,000 – $600,000</td>
+              </tr>
+              <tr>
+                <td>Propiedad agroindustrial premium</td>
+                <td>Negociable*</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size:0.8rem;color:#888;margin-top:10px;">* Valor agregado por equipos e infraestructura especializada.</p>
+        </div>
+        <div class="mercado-info">
+          <h3>Tendencias del Mercado</h3>
+          <p>Los Algarrobos (David) es la zona de más rápido crecimiento en Chiriquí, impulsada por la demanda de expatriados y el desarrollo de infraestructura vial y portuaria.</p>
+          <p>La llegada de Puerto Barú y la David Free Zone generará una apreciación significativa en el corredor David-Dolega durante los próximos años.</p>
+          <p>La demanda de propiedades agroindustriales con infraestructura completa es baja en oferta y creciente en demanda — especialmente para operaciones listas para producir.</p>
+          <div style="margin-top:20px;">
+            <span class="mercado-tag">Demanda expatriados en alza</span>
+            <span class="mercado-tag">Puerto Barú 2026</span>
+            <span class="mercado-tag">Infraestructura vial $276M</span>
+            <span class="mercado-tag">Zona franca activa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contacto" class="section contact-section">
     <div class="container">
@@ -607,14 +1066,15 @@
             <span style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Chiriquí, Panamá</span>
           </p>
         </div>
-        <form class="contact-form" onsubmit="handleSubmit(event)">
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
           <div class="form-row">
             <input type="text" name="nombre" placeholder="Nombre completo" required>
             <input type="email" name="email" placeholder="Correo electrónico" required>
           </div>
           <input type="tel" name="telefono" placeholder="Teléfono (con código de país)">
           <textarea name="mensaje" placeholder="¿Qué le gustaría saber sobre la propiedad?" required></textarea>
-          <button type="submit" class="submit-btn">Enviar Consulta</button>
+          <button type="submit" class="submit-btn" id="submitBtn">Enviar Consulta</button>
+          <div class="form-message" id="formMessage"></div>
         </form>
       </div>
     </div>
@@ -628,16 +1088,26 @@
   </footer>
 
   <script>
+    // ===== GOOGLE APPS SCRIPT URL =====
+    // Reemplaza esta URL con la URL de tu Web App de Google Apps Script
+    const GOOGLE_SCRIPT_URL = 'TU_URL_DE_APPS_SCRIPT_AQUI';
+
     // ===== LIGHTBOX =====
     const galleryImages = [
-      'assets/img/patios-01.jpg',
-      'assets/img/aerial-01.jpg',
-      'assets/img/equipo-despulpadora.jpg',
-      'assets/img/planta-01.jpg',
-      'assets/img/equipo-tanques.jpg',
-      'assets/img/aerial-03.jpg',
-      'assets/img/carretera.jpg',
-      'assets/img/planta-02.jpg'
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/patios-01.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-01.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-despulpadora.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-01.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-tanques.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-03.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/carretera.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-02.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-02.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-04.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-05.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-06.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-03.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-densimetrica.jpg'
     ];
     let currentImg = 0;
 
@@ -665,11 +1135,51 @@
       if (e.key === 'ArrowRight') navLightbox(1);
     });
 
-    // ===== FORM HANDLER =====
-    function handleSubmit(e) {
+    // ===== FORM HANDLER — GOOGLE SHEETS =====
+    async function handleSubmit(e) {
       e.preventDefault();
-      alert('Gracias por su interés. Nos pondremos en contacto pronto.');
-      e.target.reset();
+
+      const form = e.target;
+      const btn = document.getElementById('submitBtn');
+      const msgEl = document.getElementById('formMessage');
+
+      // Ocultar mensaje previo
+      msgEl.className = 'form-message';
+      msgEl.textContent = '';
+
+      // Estado de carga
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      const data = {
+        nombre: form.nombre.value.trim(),
+        email: form.email.value.trim(),
+        telefono: form.telefono.value.trim(),
+        mensaje: form.mensaje.value.trim(),
+        fecha: new Date().toLocaleString('es-PA', { timeZone: 'America/Panama' })
+      };
+
+      try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        // no-cors no permite leer el cuerpo de respuesta — si no lanza error, asumimos éxito
+        msgEl.className = 'form-message success';
+        msgEl.textContent = 'Gracias por su interés. Nos pondremos en contacto en las próximas 24 horas.';
+        form.reset();
+
+      } catch (err) {
+        msgEl.className = 'form-message error';
+        msgEl.textContent = 'Ocurrió un error al enviar el formulario. Por favor intente de nuevo o escríbanos directamente.';
+        console.error('Error al enviar formulario:', err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Enviar Consulta';
+      }
     }
 
     // ===== NAVBAR SCROLL =====
