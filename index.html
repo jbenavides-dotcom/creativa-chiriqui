@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creativa Coffee District — Propiedad en Venta | Chiriquí, Panamá</title>
-  <meta name="description" content="Propiedad agroindustrial cafetalera de 11.53 hectáreas en Chiriquí, Panamá. Planta de beneficio completa, laboratorio de catación, equipos incluidos. Creativa Coffee District.">
+  <title>Cafetalera Río Cochea — Propiedad en Venta | Chiriquí, Panamá</title>
+  <meta name="description" content="Propiedad agroindustrial cafetalera de 11.53 hectáreas en Chiriquí, Panamá. Planta de beneficio completa, laboratorio de catación, equipos incluidos. Cafetalera Río Cochea.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,19 +16,19 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --primary: #1A1A1A;
-      --secondary: #E84C6F;
-      --accent: #2BBCB3;
-      --gold: #D4A84B;
-      --bg: #FAF6F0;
-      --bg-dark: #0D0D0D;
-      --text: #1a1a1a;
+      --primary: #1B3A2D;
+      --secondary: #FFFFFF;
+      --accent: #2D5A3D;
+      --gold: #FFFFFF;
+      --bg: #F5F7F5;
+      --bg-dark: #122520;
+      --text: #1B3A2D;
       --text-light: #FFFFFF;
-      --light: #F5F0EB;
+      --light: #EBF0EC;
       --white: #FFFFFF;
-      --border: #333333;
-      --shadow: 0 4px 24px rgba(0,0,0,0.15);
-      --shadow-lg: 0 12px 48px rgba(0,0,0,0.25);
+      --border: #2D5A3D;
+      --shadow: 0 4px 24px rgba(27,58,45,0.15);
+      --shadow-lg: 0 12px 48px rgba(27,58,45,0.25);
     }
 
     html { scroll-behavior: smooth; font-size: 16px; }
@@ -51,7 +51,7 @@
     /* ========== NAVBAR ========== */
     .navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(13,13,13,0.95);
+      background: rgba(27,58,45,0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       transition: all 0.3s ease;
@@ -64,7 +64,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem; font-weight: 700; color: var(--text-light);
     }
-    .navbar-brand span { color: var(--secondary); }
+    .navbar-brand span { color: rgba(255,255,255,0.7); }
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
       font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.85);
@@ -72,11 +72,11 @@
     }
     .nav-links a:hover { color: var(--secondary); }
     .nav-cta {
-      background: var(--secondary); color: var(--white) !important;
+      background: var(--white); color: var(--primary) !important;
       padding: 10px 24px; border-radius: 6px; font-weight: 500;
       transition: opacity 0.3s, transform 0.3s;
     }
-    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+    .nav-cta:hover { background: #EBF0EC; transform: translateY(-1px); }
 
     /* Mobile menu */
     .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
@@ -94,7 +94,7 @@
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(13,13,13,0.4) 0%, rgba(26,26,26,0.8) 100%);
+      background: linear-gradient(180deg, rgba(27,58,45,0.3) 0%, rgba(18,37,32,0.8) 100%);
       z-index: 1;
     }
     .hero-content {
@@ -114,7 +114,7 @@
       color: rgba(255,255,255,0.9);
     }
     .hero-cta {
-      display: inline-block; background: var(--secondary); color: var(--white);
+      display: inline-block; background: var(--white); color: var(--primary);
       padding: 16px 40px; border-radius: 6px; font-weight: 600;
       font-size: 1rem; letter-spacing: 0.02em;
       transition: transform 0.3s, box-shadow 0.3s;
@@ -123,7 +123,7 @@
 
     /* ========== STATS BAR ========== */
     .stats {
-      background: #1A1A1A; border-bottom: 1px solid #2a2a2a;
+      background: #1B3A2D; border-bottom: 1px solid #2D5A3D;
       padding: 48px 0;
     }
     .stats-grid {
@@ -144,7 +144,7 @@
     .section-header h2 { font-size: 2.25rem; color: var(--primary); margin-bottom: 12px; }
     .section-header p { font-size: 1.125rem; color: #666; max-width: 600px; margin: 0 auto; }
     .section-divider {
-      width: 60px; height: 3px; background: var(--secondary);
+      width: 60px; height: 3px; background: var(--accent);
       margin: 16px auto 0; border-radius: 2px;
     }
 
@@ -192,20 +192,20 @@
     .sobre-ccd { background: var(--bg); }
 
     /* ========== INFRASTRUCTURE ========== */
-    .infra-section { background: #1A1A1A; }
+    .infra-section { background: #1B3A2D; }
     .infra-section .section-header h2 { color: var(--text-light); }
     .infra-section .section-header p { color: rgba(255,255,255,0.6); }
     .infra-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
     }
     .infra-card {
-      background: #2C2C2C; border: 1px solid #333;
+      background: #234D3A; border: 1px solid #2D5A3D;
       border-radius: 12px; padding: 32px; text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .infra-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
     .infra-icon {
-      width: 56px; height: 56px; background: #333;
+      width: 56px; height: 56px; background: #2D5A3D;
       border-radius: 12px; display: flex; align-items: center; justify-content: center;
       margin: 0 auto 16px; font-size: 1.5rem;
     }
@@ -247,10 +247,10 @@
     .contact-section { background: var(--primary); color: var(--white); }
     .contact-section .section-header h2 { color: var(--white); }
     .contact-section .section-header p { color: rgba(255,255,255,0.7); }
-    .contact-section .section-divider { background: var(--secondary); }
+    .contact-section .section-divider { background: var(--white); }
 
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-    .contact-info h3 { font-size: 1.25rem; margin-bottom: 24px; color: var(--secondary); font-family: 'Inter', sans-serif; }
+    .contact-info h3 { font-size: 1.25rem; margin-bottom: 24px; color: var(--white); font-family: 'Inter', sans-serif; }
     .contact-info p { color: rgba(255,255,255,0.8); margin-bottom: 16px; line-height: 1.8; }
 
     .contact-form { display: flex; flex-direction: column; gap: 16px; }
@@ -265,11 +265,11 @@
       color: rgba(255,255,255,0.45);
     }
     .contact-form input:focus, .contact-form textarea:focus {
-      outline: none; border-color: var(--secondary);
+      outline: none; border-color: var(--white);
     }
     .contact-form textarea { resize: vertical; min-height: 120px; }
     .submit-btn {
-      background: var(--secondary); color: var(--white); border: none;
+      background: var(--white); color: var(--primary); border: none;
       padding: 16px 40px; border-radius: 8px; font-size: 1rem;
       font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif;
       transition: transform 0.3s, opacity 0.3s;
@@ -278,7 +278,7 @@
 
     /* ========== FOOTER ========== */
     .footer {
-      background: #0D0D0D; color: rgba(255,255,255,0.5);
+      background: #122520; color: rgba(255,255,255,0.5);
       text-align: center; padding: 32px 0; font-size: 0.85rem;
     }
 
@@ -308,7 +308,7 @@
       .nav-links.active {
         display: flex; flex-direction: column;
         position: absolute; top: 72px; left: 0; right: 0;
-        background: #0D0D0D; padding: 24px;
+        background: #1B3A2D; padding: 24px;
         border-bottom: 1px solid rgba(255,255,255,0.08);
       }
       .gallery-grid { grid-template-columns: 1fr; }
@@ -327,7 +327,7 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container">
-      <a href="#" class="navbar-brand">Creativa <span>Coffee District</span></a>
+      <a href="#" class="navbar-brand">Cafetalera <span>Río Cochea</span></a>
       <ul class="nav-links">
         <li><a href="#galeria">Galería</a></li>
         <li><a href="#infraestructura">Infraestructura</a></li>
@@ -343,11 +343,11 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-video" src="assets/img/hero.jpg" alt="Vista aérea panorámica de Creativa Coffee District, Chiriquí, Panamá" style="object-fit:cover;">
+    <img class="hero-video" src="assets/img/hero.jpg" alt="Vista aérea panorámica de Cafetalera Río Cochea, Chiriquí, Panamá" style="object-fit:cover;">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-tag">Propiedad Agroindustrial en Venta</p>
-      <h1>Creativa Coffee District</h1>
+      <h1>Cafetalera Río Cochea</h1>
       <p class="hero-sub">11.53 hectáreas de excelencia cafetalera en Chiriquí, sobre la carretera David-Boquete</p>
       <a href="#contacto" class="hero-cta">Solicitar Información</a>
     </div>
@@ -426,14 +426,14 @@
   <section class="section sobre-ccd">
     <div class="container">
       <div class="section-header fade-in">
-        <h2>Creativa Coffee District</h2>
-        <p>Donde el arte y el café de especialidad se encuentran para inspirar cambio</p>
+        <h2>Cafetalera Río Cochea</h2>
+        <p>Excelencia cafetalera en el corazón de Chiriquí desde 1998</p>
         <div class="section-divider"></div>
       </div>
       <div style="max-width:800px;margin:0 auto;text-align:center;">
         <p class="fade-in" style="font-size:1.1rem;color:#555;line-height:1.8;margin-bottom:24px;">
-          Fundada en 2018, Creativa Coffee District es un espacio único en Chiriquí donde convergen la producción de café de especialidad,
-          el arte y la innovación agrícola. La propiedad cuenta con infraestructura completa para procesamiento húmedo y seco,
+          Cafetalera Río Cochea es una operación agroindustrial única en Chiriquí, con décadas de tradición
+          en la producción de café de especialidad. La propiedad cuenta con infraestructura completa para procesamiento húmedo y seco,
           laboratorio de catación profesional y equipamiento de última generación.
         </p>
         <p class="fade-in" style="font-size:1.1rem;color:#555;line-height:1.8;">
@@ -582,7 +582,7 @@
           </div>
           <div class="map-detail">
             <span class="map-detail-icon">🏭</span>
-            <p>Operación agroindustrial completa — Creativa Coffee District (CCD), reconocida por su innovación en café de especialidad</p>
+            <p>Operación agroindustrial completa — Cafetalera Río Cochea, reconocida por su tradición e innovación en café de especialidad</p>
           </div>
         </div>
       </div>
@@ -623,7 +623,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Creativa Coffee District — Chiriquí, Panamá. Todos los derechos reservados.</p>
+      <p>&copy; 2026 Cafetalera Río Cochea — Chiriquí, Panamá. Todos los derechos reservados.</p>
     </div>
   </footer>
 
