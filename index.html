@@ -549,33 +549,6 @@
     }
   </style>
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EWDPG445SK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-EWDPG445SK', {
-      page_title: 'Complejo Agroindustrial Rio Cochea - Propiedad en Venta',
-      content_group: 'creativa-chiriqui'
-    });
-  </script>
-
-  <!-- Meta Pixel — REEMPLAZAR 'XXXXXXXXXX' con el Pixel ID real cuando esté disponible -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'XXXXXXXXXX'); // TODO: Reemplazar con Pixel ID real
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.net/tr?id=XXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
 
@@ -1281,7 +1254,7 @@
           <p style="font-size:0.9rem;color:rgba(255,255,255,0.5);margin-top:16px;font-style:italic;">Incluye: ficha técnica completa, planos de segregación y términos de negociación.</p>
           <p style="margin-top:24px;">
             <strong style="font-size:1.05rem;">Melissa</strong><br>
-            📞 <a href="tel:+50764023472" style="color:var(--white);text-decoration:none;" onclick="gtag('event','phone_click',{event_category:'contact',event_label:'melissa'})">+507 6402-3472</a><br>
+            📞 <a href="tel:+50764023472" style="color:var(--white);text-decoration:none;">+507 6402-3472</a><br>
             <span style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Chiriquí, Panamá</span>
           </p>
           <p style="margin-top:20px;font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.7;">
@@ -1399,14 +1372,6 @@
         });
 
         // no-cors no permite leer el cuerpo de respuesta — si no lanza error, asumimos éxito
-        // GA4 event tracking
-        if (typeof gtag === 'function') {
-          gtag('event', 'form_submit', { event_category: 'lead', event_label: 'contacto_creativa', value: 1 });
-        }
-        // Meta Pixel Lead event
-        if (typeof fbq === 'function') {
-          fbq('track', 'Lead', { content_name: 'Creativa Chiriqui', content_category: 'property_inquiry' });
-        }
         msgEl.className = 'form-message success';
         msgEl.textContent = 'Gracias por su interés. Nos pondremos en contacto en las próximas 24 horas.';
         form.reset();
@@ -1442,31 +1407,6 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // ===== GA4 SCROLL DEPTH TRACKING =====
-    (function() {
-      var scrollMarks = [25, 50, 75, 100];
-      var fired = {};
-      window.addEventListener('scroll', function() {
-        var scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
-        scrollMarks.forEach(function(mark) {
-          if (scrollPercent >= mark && !fired[mark]) {
-            fired[mark] = true;
-            if (typeof gtag === 'function') {
-              gtag('event', 'scroll_depth', { event_category: 'engagement', event_label: mark + '%', value: mark });
-            }
-          }
-        });
-      });
-    })();
-
-    // ===== GA4 CTA CLICK TRACKING =====
-    document.querySelectorAll('.hero-cta, .nav-cta, .submit-btn').forEach(function(el) {
-      el.addEventListener('click', function() {
-        if (typeof gtag === 'function') {
-          gtag('event', 'cta_click', { event_category: 'engagement', event_label: el.textContent.trim() });
-        }
-      });
-    });
   </script>
 </body>
 </html>
