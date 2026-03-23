@@ -211,6 +211,17 @@
     }
     .infra-card h3 { font-size: 1.125rem; color: var(--white); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
     .infra-card p { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+    .infra-card-photo {
+      padding: 0; text-align: left; overflow: hidden;
+    }
+    .infra-card-photo img {
+      width: 100%; height: 160px; object-fit: cover;
+      border-radius: 12px 12px 0 0;
+    }
+    .infra-card-photo .infra-card-body {
+      padding: 20px 24px;
+    }
+    .infra-card-photo .infra-card-body h3 { margin-bottom: 6px; }
 
     /* ========== EQUIPMENT ========== */
     .equip-section { background: var(--bg); }
@@ -909,25 +920,31 @@
         <div class="section-divider"></div>
       </div>
       <div class="infra-grid">
-        <div class="infra-card fade-in">
-          <div class="infra-icon">🏭</div>
-          <h3>Planta de Beneficio</h3>
-          <p>Procesamiento húmedo y seco completo para café de alta calidad</p>
+        <div class="infra-card infra-card-photo fade-in">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/beneficio-humedo-nuevo.jpg" alt="Planta de Beneficio" loading="lazy">
+          <div class="infra-card-body">
+            <h3>Planta de Beneficio</h3>
+            <p>Procesamiento húmedo y seco completo para café de alta calidad</p>
+          </div>
         </div>
-        <div class="infra-card fade-in">
-          <div class="infra-icon">☀️</div>
-          <h3>Patios de Secado</h3>
-          <p>3,798 m² de área para secado natural al sol</p>
+        <div class="infra-card infra-card-photo fade-in">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/patio-secado-nuevo.jpg" alt="Patios de Secado" loading="lazy">
+          <div class="infra-card-body">
+            <h3>Patios de Secado</h3>
+            <p>3,798 m² de área para secado natural al sol</p>
+          </div>
         </div>
         <div class="infra-card fade-in">
           <div class="infra-icon">🌿</div>
           <h3>Invernadero</h3>
           <p>Espacio controlado para vivero y cultivos protegidos</p>
         </div>
-        <div class="infra-card fade-in">
-          <div class="infra-icon">🏗️</div>
-          <h3>Silos de Almacenamiento</h3>
-          <p>Almacenamiento seguro para café en pergamino y oro</p>
+        <div class="infra-card infra-card-photo fade-in">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/infra-silos.jpg" alt="Silos de Almacenamiento" loading="lazy">
+          <div class="infra-card-body">
+            <h3>Silos de Almacenamiento</h3>
+            <p>Almacenamiento seguro para café en pergamino y oro</p>
+          </div>
         </div>
         <div class="infra-card infra-card-featured fade-in">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -955,31 +972,41 @@
             <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/lab-catacion-panoramica.jpg" alt="Laboratorio de catación profesional con mesa circular y tostador de muestras" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
           </div>
         </div>
-        <div class="infra-card fade-in">
-          <div class="infra-icon">🏢</div>
-          <h3>Oficinas Administrativas</h3>
-          <p>Área de gestión y administración de la operación</p>
+        <div class="infra-card infra-card-photo fade-in">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/oficinas-paneles.jpg" alt="Oficinas Administrativas" loading="lazy">
+          <div class="infra-card-body">
+            <h3>Oficinas Administrativas</h3>
+            <p>Área de gestión y administración de la operación</p>
+          </div>
         </div>
-        <div class="infra-card fade-in">
-          <div class="infra-icon">⚙️</div>
-          <h3>Área de Pilado</h3>
-          <p>Espacio industrial amplio con maquinaria profesional para procesamiento de café</p>
+        <div class="infra-card infra-card-photo fade-in">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/area-pilado-nuevo.jpg" alt="Área de Pilado" loading="lazy">
+          <div class="infra-card-body">
+            <h3>Área de Pilado</h3>
+            <p>Espacio industrial amplio con maquinaria profesional para procesamiento de café</p>
+          </div>
         </div>
         <!-- TODO: Agregar "Área de Tostado" a Infraestructura cuando Melissa envíe la foto -->
-        <div class="infra-card fade-in">
-          <div class="infra-icon">📦</div>
-          <h3>Bodega de Despacho</h3>
-          <p>Bodega con acceso vehicular directo para carga y despacho de producto terminado</p>
+        <div class="infra-card infra-card-photo fade-in">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/bodega-despacho.jpg" alt="Bodega de Despacho" loading="lazy">
+          <div class="infra-card-body">
+            <h3>Bodega de Despacho</h3>
+            <p>Bodega con acceso vehicular directo para carga y despacho de producto terminado</p>
+          </div>
         </div>
-        <div class="infra-card fade-in">
-          <div class="infra-icon">🏠</div>
-          <h3>Campamento para Colaboradores</h3>
-          <p>Alojamiento para personal de temporada, listo para operar durante cosecha</p>
+        <div class="infra-card infra-card-photo fade-in">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/campamento-colaboradores.jpg" alt="Campamento para Colaboradores" loading="lazy">
+          <div class="infra-card-body">
+            <h3>Campamento para Colaboradores</h3>
+            <p>Alojamiento para personal de temporada, listo para operar durante cosecha</p>
+          </div>
         </div>
-        <div class="infra-card fade-in">
-          <div class="infra-icon">🏗️</div>
-          <h3>Espacio Industrial Disponible</h3>
-          <p>Área amplia disponible para expansión, nuevas líneas de producción o usos alternativos</p>
+        <div class="infra-card infra-card-photo fade-in">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/espacio-industrial.jpg" alt="Espacio Industrial Disponible" loading="lazy">
+          <div class="infra-card-body">
+            <h3>Espacio Industrial Disponible</h3>
+            <p>Área amplia disponible para expansión, nuevas líneas de producción o usos alternativos</p>
+          </div>
         </div>
         <!-- TODO: Agregar seccion "La Zona — Dolega, Chiriquí" con texto que Felipe enviará -->
         <div class="infra-card fade-in">
