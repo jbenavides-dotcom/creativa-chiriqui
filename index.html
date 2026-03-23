@@ -501,7 +501,33 @@
       padding: 28px;
     }
 
+    /* ========== RECORRIDO VIRTUAL ========== */
+    .recorrido-section { background: var(--bg); }
+    .recorrido-grid {
+      display: grid; grid-template-columns: 2fr 1fr; gap: 24px;
+    }
+    .recorrido-video {
+      border-radius: 12px; overflow: hidden;
+      box-shadow: var(--shadow); position: relative;
+    }
+    .recorrido-video video {
+      width: 100%; display: block; border-radius: 12px;
+      background: #000;
+    }
+    .recorrido-video-label {
+      padding: 14px 18px; background: var(--primary);
+      text-align: center;
+    }
+    .recorrido-video-label h3 {
+      font-size: 0.95rem; color: var(--white); margin: 0;
+      font-family: 'Inter', sans-serif; font-weight: 600;
+    }
+    .recorrido-video-label p {
+      font-size: 0.82rem; color: rgba(255,255,255,0.6); margin: 4px 0 0;
+    }
+
     @media (max-width: 968px) {
+      .recorrido-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .infra-grid { grid-template-columns: repeat(2, 1fr); }
       .equip-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -558,6 +584,7 @@
       <a href="#" class="navbar-brand">Complejo <span>Río Cochea</span></a>
       <ul class="nav-links">
         <li><a href="#galeria">Galería</a></li>
+        <li><a href="#recorrido">Recorrido</a></li>
         <li><a href="#infraestructura">Infraestructura</a></li>
         <li><a href="#equipos">Equipos</a></li>
         <li><a href="#ubicacion">Ubicación</a></li>
@@ -573,9 +600,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline poster="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1920/creativa-chiriqui/hero.jpg">
-      <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/hero-drone.mp4" type="video/mp4">
-    </video>
+    <img class="hero-video" src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1920/creativa-chiriqui/hero.jpg" alt="Vista aérea panorámica del Complejo Agroindustrial Río Cochea, Chiriquí, Panamá" style="object-fit:cover;">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-tag">Propiedad Agroindustrial en Venta</p>
@@ -774,6 +799,37 @@
     <img id="lightbox-img" src="" alt="">
     <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
   </div>
+
+  <!-- RECORRIDO VIRTUAL -->
+  <section id="recorrido" class="section recorrido-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Conozca la Planta</h2>
+        <p>Un recorrido por las instalaciones del complejo agroindustrial</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="recorrido-grid fade-in">
+        <div class="recorrido-video">
+          <video controls preload="metadata" playsinline poster="https://res.cloudinary.com/dkqocgknd/video/upload/so_55,w_1280,h_720,c_fill,f_jpg/creativa-chiriqui/recorrido-planta.jpg">
+            <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/recorrido-planta.mp4" type="video/mp4">
+          </video>
+          <div class="recorrido-video-label">
+            <h3>Recorrido por la Planta</h3>
+            <p>Silos, patios de secado, edificios principales y zona verde</p>
+          </div>
+        </div>
+        <div class="recorrido-video">
+          <video controls preload="metadata" playsinline poster="https://res.cloudinary.com/dkqocgknd/video/upload/so_8,w_1280,h_720,c_fill,f_jpg/creativa-chiriqui/recorrido-jardin.jpg">
+            <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/recorrido-jardin.mp4" type="video/mp4">
+          </video>
+          <div class="recorrido-video-label">
+            <h3>Jardines y Entorno</h3>
+            <p>Zona verde con vista a las montañas de Chiriquí</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- SOBRE CCD -->
   <section class="section sobre-ccd">
@@ -1321,8 +1377,9 @@
           <p>Solo decidir qué hacer con todo esto.</p>
           <p style="font-size:0.9rem;color:rgba(255,255,255,0.5);margin-top:16px;font-style:italic;">Incluye: ficha técnica completa, planos de segregación y términos de negociación.</p>
           <p style="margin-top:24px;">
-            <strong style="font-size:1.05rem;">Melissa</strong><br>
+            <strong style="font-size:1.05rem;">Melissa Gómez</strong><br>
             📞 <a href="tel:+50764023472" style="color:var(--white);text-decoration:none;">+507 6402-3472</a><br>
+            ✉️ <a href="mailto:admin@creativacoffeedistrict.com" style="color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.9rem;">admin@creativacoffeedistrict.com</a><br>
             <span style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Chiriquí, Panamá</span>
           </p>
           <p style="margin-top:20px;font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.7;">
