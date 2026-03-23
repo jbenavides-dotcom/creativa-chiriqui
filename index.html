@@ -503,8 +503,14 @@
 
     /* ========== RECORRIDO VIRTUAL ========== */
     .recorrido-section { background: var(--bg); }
+    .recorrido-featured {
+      margin-bottom: 24px;
+    }
+    .recorrido-featured video {
+      max-height: 500px; object-fit: cover;
+    }
     .recorrido-grid {
-      display: grid; grid-template-columns: 3fr 2fr; gap: 24px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
     }
     .recorrido-video {
       border-radius: 12px; overflow: hidden;
@@ -542,6 +548,7 @@
 
     @media (max-width: 968px) {
       .recorrido-grid { grid-template-columns: 1fr; }
+      .recorrido-featured video { max-height: 400px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .infra-grid { grid-template-columns: repeat(2, 1fr); }
       .equip-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -614,7 +621,9 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-video" src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1920/creativa-chiriqui/hero.jpg" alt="Vista aérea panorámica del Complejo Agroindustrial Río Cochea, Chiriquí, Panamá" style="object-fit:cover;">
+    <video class="hero-video" autoplay muted loop playsinline poster="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1920/creativa-chiriqui/poster-hero.jpg">
+      <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/hero-aereo.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-tag">Propiedad Agroindustrial en Venta</p>
@@ -818,14 +827,29 @@
   <section id="recorrido" class="section recorrido-section">
     <div class="container">
       <div class="section-header fade-in">
-        <h2>Conozca la Planta</h2>
-        <p>Un recorrido por las instalaciones del complejo agroindustrial</p>
+        <h2>Recorrido Virtual</h2>
+        <p>Sobrevuelo aéreo y recorrido por las instalaciones del complejo</p>
         <div class="section-divider"></div>
       </div>
+      <!-- Video featured (ancho completo) -->
+      <div class="recorrido-video recorrido-featured fade-in">
+        <video autoplay muted loop playsinline poster="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1280/creativa-chiriqui/poster-aereo.jpg">
+          <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/recorrido-aereo.mp4" type="video/mp4">
+        </video>
+        <div class="video-controls">
+          <button onclick="toggleMute(this)" title="Activar sonido">🔇</button>
+          <button onclick="toggleFullscreen(this)" title="Pantalla completa">⛶</button>
+        </div>
+        <div class="recorrido-video-label">
+          <h3>Vista Aérea del Complejo</h3>
+          <p>Sobrevuelo completo: carretera David-Boquete, planta industrial y valle de Cochea</p>
+        </div>
+      </div>
+      <!-- 2 videos secundarios -->
       <div class="recorrido-grid fade-in">
         <div class="recorrido-video">
-          <video autoplay muted loop playsinline poster="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1280/creativa-chiriqui/poster-planta.jpg">
-            <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/recorrido-planta.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline poster="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1280/creativa-chiriqui/poster-planta-v2.jpg">
+            <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/recorrido-planta-v2.mp4" type="video/mp4">
           </video>
           <div class="video-controls">
             <button onclick="toggleMute(this)" title="Activar sonido">🔇</button>
@@ -837,16 +861,16 @@
           </div>
         </div>
         <div class="recorrido-video">
-          <video autoplay muted loop playsinline poster="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1280/creativa-chiriqui/poster-jardin.jpg">
-            <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/recorrido-jardin.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline poster="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1280/creativa-chiriqui/poster-interior.jpg">
+            <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/recorrido-interior.mp4" type="video/mp4">
           </video>
           <div class="video-controls">
             <button onclick="toggleMute(this)" title="Activar sonido">🔇</button>
             <button onclick="toggleFullscreen(this)" title="Pantalla completa">⛶</button>
           </div>
           <div class="recorrido-video-label">
-            <h3>Jardines y Entorno</h3>
-            <p>Zona verde con vista a las montañas de Chiriquí</p>
+            <h3>Interior — Maquinaria Industrial</h3>
+            <p>Maquinaria Pinhalense, clasificadoras, ductos y nave de procesamiento</p>
           </div>
         </div>
       </div>
