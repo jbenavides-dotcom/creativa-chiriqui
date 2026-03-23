@@ -504,14 +504,14 @@
     /* ========== RECORRIDO VIRTUAL ========== */
     .recorrido-section { background: var(--bg); }
     .recorrido-grid {
-      display: grid; grid-template-columns: 2fr 1fr; gap: 24px;
+      display: grid; grid-template-columns: 3fr 2fr; gap: 24px;
     }
     .recorrido-video {
       border-radius: 12px; overflow: hidden;
       box-shadow: var(--shadow); position: relative;
     }
     .recorrido-video video {
-      width: 100%; display: block; border-radius: 12px;
+      width: 100%; display: block;
       background: #000;
     }
     .recorrido-video-label {
@@ -525,6 +525,20 @@
     .recorrido-video-label p {
       font-size: 0.82rem; color: rgba(255,255,255,0.6); margin: 4px 0 0;
     }
+    .video-controls {
+      position: absolute; bottom: 12px; right: 12px;
+      display: flex; gap: 8px;
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .recorrido-video:hover .video-controls { opacity: 1; }
+    .video-controls button {
+      background: rgba(0,0,0,0.55); color: white; border: none;
+      border-radius: 50%; width: 36px; height: 36px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; backdrop-filter: blur(4px);
+      transition: background 0.2s;
+    }
+    .video-controls button:hover { background: rgba(0,0,0,0.8); }
 
     @media (max-width: 968px) {
       .recorrido-grid { grid-template-columns: 1fr; }
@@ -810,18 +824,26 @@
       </div>
       <div class="recorrido-grid fade-in">
         <div class="recorrido-video">
-          <video controls preload="metadata" playsinline poster="https://res.cloudinary.com/dkqocgknd/video/upload/so_55,w_1280,h_720,c_fill,f_jpg/creativa-chiriqui/recorrido-planta.jpg">
+          <video autoplay muted loop playsinline poster="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1280/creativa-chiriqui/poster-planta.jpg">
             <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/recorrido-planta.mp4" type="video/mp4">
           </video>
+          <div class="video-controls">
+            <button onclick="toggleMute(this)" title="Activar sonido">🔇</button>
+            <button onclick="toggleFullscreen(this)" title="Pantalla completa">⛶</button>
+          </div>
           <div class="recorrido-video-label">
             <h3>Recorrido por la Planta</h3>
             <p>Silos, patios de secado, edificios principales y zona verde</p>
           </div>
         </div>
         <div class="recorrido-video">
-          <video controls preload="metadata" playsinline poster="https://res.cloudinary.com/dkqocgknd/video/upload/so_8,w_1280,h_720,c_fill,f_jpg/creativa-chiriqui/recorrido-jardin.jpg">
+          <video autoplay muted loop playsinline poster="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1280/creativa-chiriqui/poster-jardin.jpg">
             <source src="https://res.cloudinary.com/dkqocgknd/video/upload/q_auto/creativa-chiriqui/recorrido-jardin.mp4" type="video/mp4">
           </video>
+          <div class="video-controls">
+            <button onclick="toggleMute(this)" title="Activar sonido">🔇</button>
+            <button onclick="toggleFullscreen(this)" title="Pantalla completa">⛶</button>
+          </div>
           <div class="recorrido-video-label">
             <h3>Jardines y Entorno</h3>
             <p>Zona verde con vista a las montañas de Chiriquí</p>
@@ -1534,6 +1556,18 @@
         nav.style.boxShadow = 'none';
       }
     });
+
+    // ===== VIDEO CONTROLS =====
+    function toggleMute(btn) {
+      const video = btn.closest('.recorrido-video').querySelector('video');
+      video.muted = !video.muted;
+      btn.textContent = video.muted ? '🔇' : '🔊';
+    }
+    function toggleFullscreen(btn) {
+      const video = btn.closest('.recorrido-video').querySelector('video');
+      if (video.requestFullscreen) video.requestFullscreen();
+      else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+    }
 
     // ===== INTERSECTION OBSERVER — FADE-IN =====
     const observer = new IntersectionObserver((entries) => {
