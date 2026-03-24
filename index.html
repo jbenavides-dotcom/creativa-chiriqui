@@ -165,6 +165,22 @@
     .gallery-item:hover { transform: scale(1.02); }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
     .gallery-item:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+    .gallery-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 12px 16px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: #fff; font-size: 0.85rem; line-height: 1.3; margin: 0;
+    }
+    .gallery-captions {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 12px 16px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      color: #fff; font-size: 0.78rem; line-height: 1.4;
+    }
+    .gallery-captions p { margin: 4px 0; color: #fff; }
+    .gallery-item--featured {
+      grid-column: span 2; grid-row: span 2;
+    }
 
     /* Lightbox */
     .lightbox {
@@ -588,6 +604,9 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .infra-card-featured { grid-column: span 1 !important; grid-template-columns: 1fr !important; }
       .gallery-item:first-child { grid-column: auto; grid-row: auto; }
+      .gallery-item--featured { grid-column: auto; grid-row: auto; }
+      .gallery-caption { font-size: 0.75rem; padding: 8px 12px; }
+      .gallery-captions { font-size: 0.7rem; }
       .hero h1 { font-size: 2.25rem; }
       .chiricui-grid { grid-template-columns: 1fr; }
       .puerto-cards { grid-template-columns: 1fr; }
@@ -711,117 +730,49 @@
       </div>
       <div class="gallery-grid">
         <div class="gallery-item fade-in" onclick="openLightbox(0)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/patio-secado-nuevo.jpg" alt="Amplio patio de secado — vista elevada" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/patio-secado-nuevo.jpg" alt="Sistema de secado natural" loading="lazy">
+          <p class="gallery-caption">Sistema de secado natural para café de calidad</p>
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(1)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-01.jpg" alt="Vista aérea de la propiedad" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-04.jpg" alt="Río Cochea" loading="lazy">
+          <p class="gallery-caption">Finca con acceso a fuente hídrica permanente (Río Cochea)</p>
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(2)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-despulpadora.jpg" alt="Despulpadora Pinhalense" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/carretera.jpg" alt="Vía Boquete" loading="lazy">
+          <p class="gallery-caption">Ubicación privilegiada con exposición directa a la vía Boquete</p>
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(3)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-01.jpg" alt="Interior de la planta de procesamiento" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-01.jpg" alt="Vista aérea del complejo" loading="lazy">
+          <p class="gallery-caption">Ubicación privilegiada con acceso a vía principal y río, ideal para operación agroindustrial</p>
         </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(4)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/tanques-fermentacion-nuevo.jpg" alt="Tanques de fermentación en acero inoxidable" loading="lazy">
+        <div class="gallery-item gallery-item--featured fade-in" onclick="openLightbox(4)">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/galeria-planta-procesamiento.jpg" alt="Planta de procesamiento" loading="lazy">
+          <div class="gallery-captions">
+            <p>1. Planta de procesamiento húmedo de café, diseñada para el manejo eficiente del grano</p>
+            <p>2. Área de logística y almacenamiento de café procesado</p>
+            <p>3. Área residencial para personal operativo</p>
+          </div>
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(5)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-03.jpg" alt="Vista aérea del terreno" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/lab-catacion-panoramica.jpg" alt="Laboratorio de catación" loading="lazy">
+          <p class="gallery-caption">Sala de análisis y control de calidad de café</p>
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(6)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/carretera.jpg" alt="Acceso por carretera David-Boquete" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/cuarto-frio-interior.jpg" alt="Cámaras de almacenamiento" loading="lazy">
+          <p class="gallery-caption">Cámaras de almacenamiento de café con temperatura controlada</p>
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(7)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-02.jpg" alt="Infraestructura de la planta" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/galeria-despasille.jpg" alt="Área de despasille" loading="lazy">
+          <p class="gallery-caption">Área de despasille (selección manual)</p>
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(8)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-02.jpg" alt="Patios de secado vistos desde el aire" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/espacio-industrial.jpg" alt="Unidad adaptable" loading="lazy">
+          <p class="gallery-caption">Unidad adaptable para transformación de café</p>
         </div>
         <div class="gallery-item fade-in" onclick="openLightbox(9)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-04.jpg" alt="Río y linderos de la propiedad" loading="lazy">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/galeria-invernadero-exterior.jpg" alt="Casa de Cristal" loading="lazy">
+          <p class="gallery-caption">Casa de Cristal — Invernadero</p>
         </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(10)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-05.jpg" alt="Propiedad junto a carretera" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(11)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-06.jpg" alt="Vista panorámica con carretera" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(12)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-03.jpg" alt="Detalle interior de infraestructura" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(13)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-densimetrica.jpg" alt="Equipo de procesamiento Pinhalense" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(14)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/guardiola-nueva.jpg" alt="Guardiola secadora mecánica" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(15)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-guardiola-frontal.jpg" alt="Interior planta de procesamiento" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(16)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-interior-procesamiento.jpg" alt="Maquinaria industrial de procesamiento" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(17)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/edificio-bodegas.jpg" alt="Bodegas e invernaderos exteriores" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(18)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/pickup-nueva.jpg" alt="Pick-up Mitsubishi" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(19)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/area-pilado-01.jpg" alt="Área de pilado — espacio industrial amplio" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(20)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/area-pilado-02.jpg" alt="Área de pilado — maquinaria industrial" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(21)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/cuarto-frio-interior.jpg" alt="Interior cuarto frío industrial" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(22)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/cuarto-frio-puerta.jpg" alt="Cuarto frío — puerta y deshumidificador" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(23)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/lab-catacion-panoramica.jpg" alt="Laboratorio de catación — mesa profesional y equipos" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(24)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/lab-catacion-amplia.jpg" alt="Laboratorio de catación — vista completa del espacio" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(25)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/lab-catacion-exterior.jpg" alt="Laboratorio de catación — vista exterior con ventanales de madera" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(26)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/lab-catacion-mesa.jpg" alt="Mesa de catación circular profesional" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(27)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/beneficio-humedo-nuevo.jpg" alt="Planta de beneficio húmedo — exterior" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(28)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/bodega-despacho.jpg" alt="Bodega de despacho" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(29)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/campamento-colaboradores.jpg" alt="Campamento para colaboradores" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(30)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/espacio-industrial.jpg" alt="Espacio industrial disponible para expansión" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(31)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/secadora-calor.jpg" alt="Secadora de calor mecánica" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(32)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/exterior-patio.jpg" alt="Vista exterior del patio de secado" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(33)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/exterior-corredor.jpg" alt="Corredor interior techado" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(34)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/oficinas-paneles.jpg" alt="Oficinas administrativas con paneles de madera" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(35)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/area-pilado-zip-01.jpg" alt="Área de pilado — espacio con ventanales" loading="lazy">
-        </div>
-        <div class="gallery-item fade-in" onclick="openLightbox(36)">
-          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/area-pilado-zip-02.jpg" alt="Área de pilado — maquinaria y cabina" loading="lazy">
-        </div>
-        <!-- TODO: Agregar fotos de la entrada cuando Melissa las envíe -->
       </div>
     </div>
   </section>
@@ -934,10 +885,12 @@
             <p>3,798 m² de área para secado natural al sol</p>
           </div>
         </div>
-        <div class="infra-card fade-in">
-          <div class="infra-icon">🌿</div>
-          <h3>Invernadero</h3>
-          <p>Espacio controlado para vivero y cultivos protegidos</p>
+        <div class="infra-card infra-card-photo fade-in">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/infra-invernadero.jpg" alt="Vista exterior del invernadero" loading="lazy">
+          <div class="infra-card-body">
+            <h3>Invernadero</h3>
+            <p>Espacio controlado para vivero y cultivos protegidos</p>
+          </div>
         </div>
         <div class="infra-card infra-card-photo fade-in">
           <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/infra-silos.jpg" alt="Silos de Almacenamiento" loading="lazy">
@@ -1009,10 +962,12 @@
           </div>
         </div>
         <!-- TODO: Agregar seccion "La Zona — Dolega, Chiriquí" con texto que Felipe enviará -->
-        <div class="infra-card fade-in">
-          <div class="infra-icon">💧</div>
-          <h3>Concesión de Agua</h3>
-          <p>Derecho de uso de agua vigente para toda la operación</p>
+        <div class="infra-card infra-card-photo fade-in">
+          <img src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_600/creativa-chiriqui/infra-concesion-agua.jpg" alt="Concesión de agua — Río Cochea" loading="lazy">
+          <div class="infra-card-body">
+            <h3>Concesión de Agua</h3>
+            <p>Derecho de uso de agua vigente para toda la operación</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1487,43 +1442,16 @@
 
     // ===== LIGHTBOX =====
     const galleryImages = [
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/patio-secado-nuevo.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-01.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-despulpadora.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-01.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/tanques-fermentacion-nuevo.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-03.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/carretera.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-02.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-02.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-04.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-05.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/aerial-06.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-03.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/equipo-densimetrica.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/guardiola-nueva.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-guardiola-frontal.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/planta-interior-procesamiento.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/edificio-bodegas.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/pickup-nueva.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/area-pilado-01.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/area-pilado-02.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/cuarto-frio-interior.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/cuarto-frio-puerta.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/lab-catacion-panoramica.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/lab-catacion-amplia.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/lab-catacion-exterior.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/lab-catacion-mesa.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/beneficio-humedo-nuevo.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/bodega-despacho.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/campamento-colaboradores.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/espacio-industrial.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_800/creativa-chiriqui/secadora-calor.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/exterior-patio.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/exterior-corredor.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/oficinas-paneles.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/area-pilado-zip-01.jpg',
-      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200/creativa-chiriqui/area-pilado-zip-02.jpg'
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1400/creativa-chiriqui/patio-secado-nuevo.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1400/creativa-chiriqui/aerial-04.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1400/creativa-chiriqui/carretera.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1400/creativa-chiriqui/aerial-01.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1400/creativa-chiriqui/galeria-planta-procesamiento.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1400/creativa-chiriqui/lab-catacion-panoramica.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1400/creativa-chiriqui/cuarto-frio-interior.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1400/creativa-chiriqui/galeria-despasille.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1400/creativa-chiriqui/espacio-industrial.jpg',
+      'https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1400/creativa-chiriqui/galeria-invernadero-exterior.jpg'
     ];
     let currentImg = 0;
 
